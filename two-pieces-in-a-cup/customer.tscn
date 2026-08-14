@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b6qbq2ndm1dtg"]
 
+[ext_resource type="Script" uid="uid://ctdqjyfi5sv71" path="res://customer.gd" id="1_co351"]
 [ext_resource type="Texture2D" uid="uid://b61ecu51hly58" path="res://cats/cat10.png" id="1_r8ta2"]
 [ext_resource type="Texture2D" uid="uid://3kix221evt8g" path="res://cats/happy_face.png" id="2_f7asb"]
 [ext_resource type="Texture2D" uid="uid://ycu6cnj72srd" path="res://panel_.png" id="3_f7asb"]
@@ -11,6 +12,7 @@ bg_color = Color(0.15294118, 0.078431375, 0.11372549, 1)
 bg_color = Color(0.4410218, 0.7272209, 0.5678019, 1)
 
 [node name="customer" type="Node2D" unique_id=1116257031]
+script = ExtResource("1_co351")
 
 [node name="body" type="Sprite2D" parent="." unique_id=1613662244]
 texture = ExtResource("1_r8ta2")

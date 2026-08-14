@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Wardrobe="*uid://cj2fopcn0qhba"
+DrinkStand="*uid://bi503u2wnailc"
 
 [display]
 

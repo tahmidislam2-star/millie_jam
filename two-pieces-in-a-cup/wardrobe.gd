@@ -16,7 +16,11 @@ func spend(price: int) -> bool:
 	coins -= price
 	coins_changed.emit(coins)
 	return true
-
+	
+func add_coins(amount: int) -> void:
+	coins += amount
+	coins_changed.emit(coins)
+	
 func equip(item_type: String, texture: Texture2D, button: Node) -> void:
 	if equipped.has(item_type) and equipped[item_type] != button:
 		equipped[item_type].force_unequip()

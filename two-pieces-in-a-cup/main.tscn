@@ -3,8 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://b1awiu6ph5q78" path="res://bg1.png" id="1_1bvp3"]
 [ext_resource type="Script" uid="uid://c78x8w5uiw6p4" path="res://main.gd" id="1_d13ii"]
 [ext_resource type="FontFile" uid="uid://uv6et6abcaiv" path="res://Born2bSportyFS.otf" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://b61ecu51hly58" path="res://cats/cat10.png" id="2_ppx11"]
+[ext_resource type="Texture2D" uid="uid://devc8wbttf81u" path="res://cats/cat5.png" id="3_1yv1y"]
 [ext_resource type="Texture2D" uid="uid://blhai7nolxaix" path="res://cato.png" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://gtcqdmduru6p" path="res://cats/cat3.png" id="4_5yh34"]
 [ext_resource type="Texture2D" uid="uid://dtawh31jh4647" path="res://cato_shadow.png" id="4_lquwl"]
+[ext_resource type="Texture2D" uid="uid://dbxgd7lbndxqo" path="res://cats/cat2.png" id="5_pjuso"]
+[ext_resource type="Texture2D" uid="uid://usgofpbtm4vs" path="res://cats/cat8.png" id="6_23xmf"]
 [ext_resource type="Texture2D" uid="uid://brrb6ckrrstrl" path="res://items/sweater.png" id="6_82xsv"]
 [ext_resource type="Texture2D" uid="uid://46hrvsooxfir" path="res://cat_bed.png" id="6_272bh"]
 [ext_resource type="Texture2D" uid="uid://c4cbyvr2hyptj" path="res://buttons/cross.png" id="6_getpj"]
@@ -14,16 +19,24 @@
 [ext_resource type="Texture2D" uid="uid://bc58gkt6iaceq" path="res://buttons/hat.png" id="8_4c57u"]
 [ext_resource type="Texture2D" uid="uid://24qhxf64arfg" path="res://buttons/cross_hover.png" id="8_d13ii"]
 [ext_resource type="Texture2D" uid="uid://bhk7y5qxuacit" path="res://items/chef_hat.png" id="8_ryguw"]
+[ext_resource type="Texture2D" uid="uid://b3p76ayy4oaw0" path="res://cats/serious_face.png" id="8_swlj1"]
 [ext_resource type="Texture2D" uid="uid://cfpkj8uxq6ko" path="res://buttons/hat_press.png" id="9_efxa6"]
+[ext_resource type="Texture2D" uid="uid://3kix221evt8g" path="res://cats/happy_face.png" id="9_yysqy"]
 [ext_resource type="Texture2D" uid="uid://bkqos421sdcbm" path="res://buttons/hat_hover.png" id="10_dg77c"]
+[ext_resource type="Texture2D" uid="uid://cvqut2qu2nvrg" path="res://cats/sad_face.png" id="10_n5t1e"]
 [ext_resource type="Texture2D" uid="uid://hp1trkgyfc57" path="res://buttons/glasses.png" id="11_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://ddbjl8jse76fi" path="res://cats/cat1.png" id="11_h6isl"]
+[ext_resource type="Texture2D" uid="uid://ddl8jxc24pxu6" path="res://cats/cat7.png" id="12_53bls"]
 [ext_resource type="Texture2D" uid="uid://dax72cdxg6uk5" path="res://buttons/glasses_pressed.png" id="12_yaehf"]
 [ext_resource type="Texture2D" uid="uid://8f5qmrdrixng" path="res://buttons/glasses_hover.png" id="13_074og"]
+[ext_resource type="Texture2D" uid="uid://beft683grd5lj" path="res://cats/cat9.png" id="13_lwnsi"]
 [ext_resource type="Texture2D" uid="uid://b34rj8rqmu57o" path="res://buttons/dress.png" id="14_cegan"]
 [ext_resource type="Texture2D" uid="uid://8eb56qgbn7d5" path="res://buttons/dress_hover_pressed.png" id="15_82xsv"]
 [ext_resource type="Texture2D" uid="uid://by8bsmt45tehh" path="res://items/hat1.png" id="15_b1qrp"]
 [ext_resource type="Texture2D" uid="uid://b5lnaicl3r55" path="res://coin.png" id="16_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://bqjsxow1wrisq" path="res://cats/happy_face_fm.png" id="16_41lik"]
 [ext_resource type="Texture2D" uid="uid://qf6cv3hefqr5" path="res://buttons/dress_hover.png" id="16_getpj"]
+[ext_resource type="Texture2D" uid="uid://bry2ygmn2biax" path="res://cats/sad_face_fm.png" id="17_jbvwl"]
 [ext_resource type="Script" uid="uid://mt3g03k6nwwo" path="res://button.gd" id="18_074og"]
 [ext_resource type="Texture2D" uid="uid://c2iq1jg54jq80" path="res://items/sweater_button.png" id="20_d13ii"]
 [ext_resource type="Texture2D" uid="uid://duha7ij7wftti" path="res://items/sweater_button_coffee.png" id="23_1u8w0"]
@@ -50,6 +63,10 @@
 [ext_resource type="Texture2D" uid="uid://cn612h0crodwn" path="res://items/button7.png" id="45_abqjc"]
 [ext_resource type="Texture2D" uid="uid://d8ip28ledcw" path="res://items/hat4.png" id="45_hrvbo"]
 [ext_resource type="Texture2D" uid="uid://dur6vyo35ynes" path="res://items/hat7.png" id="46_6iyjs"]
+[ext_resource type="Texture2D" uid="uid://dghdmra03ywfn" path="res://cats/cat6.png" id="51_blkrb"]
+[ext_resource type="Texture2D" uid="uid://brakfngns8pdp" path="res://cats/cat4.png" id="51_ntx8l"]
+[ext_resource type="Texture2D" uid="uid://d2kn2gq3urjs8" path="res://cats/serious_face_fm.png" id="52_abqjc"]
+[ext_resource type="Script" uid="uid://ebh08ue7l00f" path="res://ingredient_button.gd" id="52_rqtf5"]
 [ext_resource type="Texture2D" uid="uid://cwj7wpmcyc3pn" path="res://items_buttons/sugarcane.png" id="53_6iyjs"]
 [ext_resource type="Texture2D" uid="uid://dihuioplferjb" path="res://items_buttons/lemon_button.png" id="54_4w656"]
 [ext_resource type="Texture2D" uid="uid://qu1pxdb0moqb" path="res://items_buttons/mint.png" id="55_ruth0"]
@@ -60,12 +77,22 @@
 [ext_resource type="Texture2D" uid="uid://gmcwb87xqjgd" path="res://items_buttons/strawberry.png" id="60_ntx8l"]
 [ext_resource type="Texture2D" uid="uid://chrnwincbvgiy" path="res://items_buttons/tomato.png" id="61_pjyto"]
 [ext_resource type="Texture2D" uid="uid://by0ss457r0ke8" path="res://items_buttons/lavender.png" id="62_sm6fg"]
-[ext_resource type="Texture2D" uid="uid://debyouoqom6lp" path="res://blender.sheet.png" id="62_uatky"]
+[ext_resource type="Texture2D" uid="uid://bivqbv350qjb8" path="res://blender_items/cucumber.png" id="62_uatky"]
+[ext_resource type="Script" uid="uid://n2iu6rjcht1d" path="res://blender_slot.gd" id="63_1vm84"]
 [ext_resource type="Texture2D" uid="uid://bdv5nbdla1cnj" path="res://blender_button.png" id="63_ntx8l"]
+[ext_resource type="Texture2D" uid="uid://cx5wugca73bob" path="res://blender_items/lemon.png" id="63_pjuso"]
 [ext_resource type="Texture2D" uid="uid://lx0fsdq7w4vu" path="res://blender_items/mint.png" id="63_rqtf5"]
 [ext_resource type="Texture2D" uid="uid://mh2nrl3vdvss" path="res://blender_button_pressed.png" id="64_uatky"]
+[ext_resource type="Texture2D" uid="uid://dgbt14v7x4na0" path="res://blender_items/sugarcane.png" id="65_23xmf"]
 [ext_resource type="Texture2D" uid="uid://bb7wsx864di6g" path="res://blender_button_hover.png" id="65_rqtf5"]
 [ext_resource type="Texture2D" uid="uid://dpdgw46jf3121" path="res://glass.png" id="67_rqtf5"]
+[ext_resource type="Texture2D" uid="uid://b4g3057hib517" path="res://blender_items/hibiscus.png" id="71_swlj1"]
+[ext_resource type="Texture2D" uid="uid://duys4462dfud7" path="res://blender_items/ginger.png" id="73_yysqy"]
+[ext_resource type="Texture2D" uid="uid://c77peniiqlpe6" path="res://blender_items/watermelon.png" id="75_n5t1e"]
+[ext_resource type="Texture2D" uid="uid://ce0ek1w4niys5" path="res://blender_items/strawberry.png" id="77_h6isl"]
+[ext_resource type="Texture2D" uid="uid://dm5rpc4np1jfv" path="res://blender_items/lavender.png" id="79_53bls"]
+[ext_resource type="Texture2D" uid="uid://rtkdvr41pvg7" path="res://blender_items/tomato.png" id="81_lwnsi"]
+[ext_resource type="Texture2D" uid="uid://debyouoqom6lp" path="res://blender.sheet.png" id="83_41lik"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jcovd"]
 bg_color = Color(0.2784314, 0.15294118, 0.18431373, 1)
@@ -131,6 +158,15 @@ border_color = Color(0.2784314, 0.15294118, 0.18431373, 1)
 
 [node name="Main" type="Node2D" unique_id=382989355]
 script = ExtResource("1_d13ii")
+male_bodies = Array[Texture2D]([ExtResource("2_ppx11"), ExtResource("4_5yh34"), ExtResource("5_pjuso"), ExtResource("6_23xmf"), ExtResource("51_ntx8l")])
+female_bodies = Array[Texture2D]([ExtResource("11_h6isl"), ExtResource("12_53bls"), ExtResource("13_lwnsi"), ExtResource("51_blkrb"), ExtResource("3_1yv1y")])
+male_default_face = ExtResource("8_swlj1")
+male_happy_face = ExtResource("9_yysqy")
+male_sad_face = ExtResource("10_n5t1e")
+female_default_face = ExtResource("52_abqjc")
+female_happy_face = ExtResource("16_41lik")
+female_sad_face = ExtResource("17_jbvwl")
+serve_reward = 100
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1576791566]
 
@@ -739,6 +775,11 @@ offset_top = 20.0
 offset_right = 548.0
 offset_bottom = 75.0
 texture_normal = ExtResource("54_4w656")
+script = ExtResource("52_rqtf5")
+ingredient_name = "Lemon"
+sweetness = 2
+coolness = 3
+icon_texture = ExtResource("63_pjuso")
 
 [node name="amount" type="Label" parent="item list/lemon" unique_id=1050800339]
 layout_mode = 0
@@ -755,6 +796,10 @@ offset_top = 20.0
 offset_right = 620.0
 offset_bottom = 75.0
 texture_normal = ExtResource("53_6iyjs")
+script = ExtResource("52_rqtf5")
+ingredient_name = "Sugarcane"
+sweetness = 9
+icon_texture = ExtResource("65_23xmf")
 
 [node name="amount" type="Label" parent="item list/sugarcane" unique_id=1170748950]
 layout_mode = 0
@@ -771,6 +816,11 @@ offset_top = 75.0
 offset_right = 548.0
 offset_bottom = 130.0
 texture_normal = ExtResource("55_ruth0")
+script = ExtResource("52_rqtf5")
+ingredient_name = "Mint"
+sweetness = 3
+coolness = 8
+icon_texture = ExtResource("63_rqtf5")
 
 [node name="amount" type="Label" parent="item list/mint" unique_id=649160713]
 layout_mode = 0
@@ -787,6 +837,10 @@ offset_top = 75.0
 offset_right = 620.0
 offset_bottom = 130.0
 texture_normal = ExtResource("56_rm4vd")
+script = ExtResource("52_rqtf5")
+ingredient_name = "Cucumber"
+coolness = 9
+icon_texture = ExtResource("62_uatky")
 
 [node name="amount" type="Label" parent="item list/cucumber" unique_id=569537267]
 layout_mode = 0
@@ -803,6 +857,12 @@ offset_top = 130.0
 offset_right = 620.0
 offset_bottom = 185.0
 texture_normal = ExtResource("57_pjyto")
+script = ExtResource("52_rqtf5")
+ingredient_name = "Hibiscus"
+sweetness = 4
+coolness = 3
+fizziness = 7
+icon_texture = ExtResource("71_swlj1")
 
 [node name="amount" type="Label" parent="item list/hibiscus" unique_id=1200200070]
 layout_mode = 0
@@ -819,6 +879,12 @@ offset_top = 130.0
 offset_right = 548.0
 offset_bottom = 185.0
 texture_normal = ExtResource("58_sm6fg")
+script = ExtResource("52_rqtf5")
+ingredient_name = "Ginger"
+sweetness = 3
+coolness = 2
+fizziness = 8
+icon_texture = ExtResource("73_yysqy")
 
 [node name="amount" type="Label" parent="item list/ginger" unique_id=2112687568]
 layout_mode = 0
@@ -835,6 +901,11 @@ offset_top = 185.0
 offset_right = 620.0
 offset_bottom = 240.0
 texture_normal = ExtResource("59_b17eg")
+script = ExtResource("52_rqtf5")
+ingredient_name = "Watermelon"
+sweetness = 7
+coolness = 6
+icon_texture = ExtResource("75_n5t1e")
 
 [node name="amount" type="Label" parent="item list/watermelon" unique_id=1571550780]
 layout_mode = 0
@@ -851,6 +922,12 @@ offset_top = 185.0
 offset_right = 548.0
 offset_bottom = 240.0
 texture_normal = ExtResource("60_ntx8l")
+script = ExtResource("52_rqtf5")
+ingredient_name = "Strawberry"
+sweetness = 8
+coolness = 4
+fizziness = 2
+icon_texture = ExtResource("77_h6isl")
 
 [node name="amount" type="Label" parent="item list/strawberry" unique_id=245947124]
 layout_mode = 0
@@ -860,15 +937,21 @@ offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("2_0xm2m")
 text = "0"
 
-[node name="lavender" type="TextureButton" parent="item list" unique_id=1495438641]
+[node name="Passionfruit" type="TextureButton" parent="item list" unique_id=1495438641]
 layout_mode = 0
 offset_left = 548.0
 offset_top = 240.0
 offset_right = 620.0
 offset_bottom = 295.0
 texture_normal = ExtResource("61_pjyto")
+script = ExtResource("52_rqtf5")
+ingredient_name = "Passionfruit"
+sweetness = 6
+coolness = 5
+fizziness = 8
+icon_texture = ExtResource("81_lwnsi")
 
-[node name="amount" type="Label" parent="item list/lavender" unique_id=199607449]
+[node name="amount" type="Label" parent="item list/Passionfruit" unique_id=199607449]
 layout_mode = 0
 offset_left = 6.0
 offset_right = 46.0
@@ -876,15 +959,21 @@ offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("2_0xm2m")
 text = "0"
 
-[node name="tomato" type="TextureButton" parent="item list" unique_id=1957810369]
+[node name="lavender" type="TextureButton" parent="item list" unique_id=1957810369]
 layout_mode = 0
 offset_left = 476.0
 offset_top = 240.0
 offset_right = 548.0
 offset_bottom = 295.0
 texture_normal = ExtResource("62_sm6fg")
+script = ExtResource("52_rqtf5")
+ingredient_name = "Lavender"
+sweetness = 3
+coolness = 7
+fizziness = 4
+icon_texture = ExtResource("79_53bls")
 
-[node name="amount" type="Label" parent="item list/tomato" unique_id=1708440918]
+[node name="amount" type="Label" parent="item list/lavender" unique_id=1708440918]
 layout_mode = 0
 offset_left = 6.0
 offset_right = 46.0
@@ -914,7 +1003,7 @@ offset_right = -10.5
 offset_bottom = 16.5
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("63_rqtf5")
+script = ExtResource("63_1vm84")
 
 [node name="item2" type="TextureButton" parent="blender/items" unique_id=1559392978]
 layout_mode = 1
@@ -929,11 +1018,12 @@ offset_right = 43.5
 offset_bottom = 16.5
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("63_rqtf5")
+script = ExtResource("63_1vm84")
+slot_index = 1
 
 [node name="Blender" type="Sprite2D" parent="blender" unique_id=530398646]
 position = Vector2(739, 245)
-texture = ExtResource("62_uatky")
+texture = ExtResource("83_41lik")
 hframes = 3
 
 [node name="blender_button" type="TextureButton" parent="blender" unique_id=849786974]
@@ -973,6 +1063,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_rqtf5")
 text = "Serve"
 
 [node name="Glass_texture" type="Sprite2D" parent="glass" unique_id=2032000791]
+z_index = 1
 position = Vector2(935, 278)
 texture = ExtResource("67_rqtf5")
 
