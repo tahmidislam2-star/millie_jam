@@ -1,0 +1,2071 @@
+[gd_scene format=3 uid="uid://6582qs577f6a"]
+
+[ext_resource type="Script" uid="uid://c78x8w5uiw6p4" path="res://scripts/main.gd" id="1_engxj"]
+[ext_resource type="Texture2D" uid="uid://b61ecu51hly58" path="res://cats/cat10.png" id="2_raiwf"]
+[ext_resource type="Texture2D" uid="uid://gtcqdmduru6p" path="res://cats/cat3.png" id="3_roort"]
+[ext_resource type="Texture2D" uid="uid://dbxgd7lbndxqo" path="res://cats/cat2.png" id="4_gm02q"]
+[ext_resource type="Texture2D" uid="uid://usgofpbtm4vs" path="res://cats/cat8.png" id="5_07pt3"]
+[ext_resource type="Texture2D" uid="uid://brakfngns8pdp" path="res://cats/cat4.png" id="6_37xlc"]
+[ext_resource type="Texture2D" uid="uid://ddbjl8jse76fi" path="res://cats/cat1.png" id="7_83607"]
+[ext_resource type="Texture2D" uid="uid://ddl8jxc24pxu6" path="res://cats/cat7.png" id="8_vny5k"]
+[ext_resource type="Texture2D" uid="uid://beft683grd5lj" path="res://cats/cat9.png" id="9_8lcmr"]
+[ext_resource type="Texture2D" uid="uid://dghdmra03ywfn" path="res://cats/cat6.png" id="10_ga3rw"]
+[ext_resource type="Texture2D" uid="uid://devc8wbttf81u" path="res://cats/cat5.png" id="11_f5chs"]
+[ext_resource type="Texture2D" uid="uid://b3p76ayy4oaw0" path="res://cats/serious_face.png" id="12_eh25q"]
+[ext_resource type="Texture2D" uid="uid://3kix221evt8g" path="res://cats/happy_face.png" id="13_joh2r"]
+[ext_resource type="Texture2D" uid="uid://cvqut2qu2nvrg" path="res://cats/sad_face.png" id="14_yton5"]
+[ext_resource type="Texture2D" uid="uid://d2kn2gq3urjs8" path="res://cats/serious_face_fm.png" id="15_4ahvx"]
+[ext_resource type="Texture2D" uid="uid://bqjsxow1wrisq" path="res://cats/happy_face_fm.png" id="16_2cr71"]
+[ext_resource type="Texture2D" uid="uid://bry2ygmn2biax" path="res://cats/sad_face_fm.png" id="17_1hbcg"]
+[ext_resource type="Texture2D" uid="uid://cowkuam1ot814" path="res://sprites/seeds.png" id="18_jp61a"]
+[ext_resource type="FontFile" uid="uid://uv6et6abcaiv" path="res://Born2bSportyFS.otf" id="18_m4o51"]
+[ext_resource type="Texture2D" uid="uid://b5lnaicl3r55" path="res://sprites/coin.png" id="19_jp61a"]
+[ext_resource type="Texture2D" uid="uid://hvgvnoujlmhk" path="res://buttons/next_room.png" id="20_esrwe"]
+[ext_resource type="Texture2D" uid="uid://numc3dm21ta5" path="res://buttons/next_press.png" id="21_4b36k"]
+[ext_resource type="Texture2D" uid="uid://ddkaydjf3bire" path="res://buttons/next_press_hover.png" id="22_1v8b0"]
+[ext_resource type="Texture2D" uid="uid://cottft1tf8254" path="res://buttons/exit.png" id="23_683hg"]
+[ext_resource type="Texture2D" uid="uid://e0sw8ens0i85" path="res://buttons/exit_pressr.png" id="24_ow8of"]
+[ext_resource type="Texture2D" uid="uid://b0nxw1vskgle1" path="res://buttons/exit_hover.png" id="25_hj4tt"]
+[ext_resource type="Texture2D" uid="uid://b1awiu6ph5q78" path="res://sprites/bg1.png" id="26_kqx4a"]
+[ext_resource type="Texture2D" uid="uid://46hrvsooxfir" path="res://sprites/cat_bed.png" id="27_pfcs8"]
+[ext_resource type="Texture2D" uid="uid://n85cuxyswgm8" path="res://sprites/cat_bed_hover.png" id="28_50d7c"]
+[ext_resource type="Texture2D" uid="uid://dtawh31jh4647" path="res://sprites/cato_shadow.png" id="29_ruytr"]
+[ext_resource type="Texture2D" uid="uid://blhai7nolxaix" path="res://sprites/cato.png" id="30_la3dr"]
+[ext_resource type="Texture2D" uid="uid://c4cbyvr2hyptj" path="res://buttons/cross.png" id="31_hcsi8"]
+[ext_resource type="Texture2D" uid="uid://bext8fsqe677n" path="res://buttons/cross_press.png" id="32_wi1le"]
+[ext_resource type="Texture2D" uid="uid://24qhxf64arfg" path="res://buttons/cross_hover.png" id="33_o7pr5"]
+[ext_resource type="Texture2D" uid="uid://bc58gkt6iaceq" path="res://buttons/hat.png" id="34_hyj2l"]
+[ext_resource type="Texture2D" uid="uid://cfpkj8uxq6ko" path="res://buttons/hat_press.png" id="35_vuqay"]
+[ext_resource type="Texture2D" uid="uid://bkqos421sdcbm" path="res://buttons/hat_hover.png" id="36_wfmv0"]
+[ext_resource type="Texture2D" uid="uid://hp1trkgyfc57" path="res://buttons/glasses.png" id="37_wxrqn"]
+[ext_resource type="Texture2D" uid="uid://dax72cdxg6uk5" path="res://buttons/glasses_pressed.png" id="38_n756u"]
+[ext_resource type="Texture2D" uid="uid://8f5qmrdrixng" path="res://buttons/glasses_hover.png" id="39_k33j2"]
+[ext_resource type="Texture2D" uid="uid://b34rj8rqmu57o" path="res://buttons/dress.png" id="40_2cjf7"]
+[ext_resource type="Texture2D" uid="uid://8eb56qgbn7d5" path="res://buttons/dress_hover_pressed.png" id="41_4e8e3"]
+[ext_resource type="Texture2D" uid="uid://qf6cv3hefqr5" path="res://buttons/dress_hover.png" id="42_5gihh"]
+[ext_resource type="Texture2D" uid="uid://c2iq1jg54jq80" path="res://items/sweater_button.png" id="43_407df"]
+[ext_resource type="Script" uid="uid://mt3g03k6nwwo" path="res://scripts/button.gd" id="44_4sqen"]
+[ext_resource type="Texture2D" uid="uid://brrb6ckrrstrl" path="res://items/sweater.png" id="45_w6a6y"]
+[ext_resource type="Texture2D" uid="uid://duha7ij7wftti" path="res://items/sweater_button_coffee.png" id="46_knlx5"]
+[ext_resource type="Texture2D" uid="uid://1scomr0vpdsr" path="res://items/sweater_coffee.png" id="47_pes4l"]
+[ext_resource type="Texture2D" uid="uid://bl8svgjew0qtq" path="res://items/chef_hat_button.png" id="48_s5e0g"]
+[ext_resource type="Texture2D" uid="uid://bhk7y5qxuacit" path="res://items/chef_hat.png" id="49_uya8e"]
+[ext_resource type="Texture2D" uid="uid://b0yv47fite4rm" path="res://items/button1.png" id="50_2tiby"]
+[ext_resource type="Texture2D" uid="uid://by8bsmt45tehh" path="res://items/hat1.png" id="51_1m7le"]
+[ext_resource type="Texture2D" uid="uid://beiqfn337monw" path="res://items/button3.png" id="52_qqwal"]
+[ext_resource type="Texture2D" uid="uid://cit3gvvoi7y8d" path="res://items/hat3.png" id="53_qr8e4"]
+[ext_resource type="Texture2D" uid="uid://b4uqccfr1rhrh" path="res://items/button2.png" id="54_d7502"]
+[ext_resource type="Texture2D" uid="uid://cittja8lhmovg" path="res://items/hat2.png" id="55_avynn"]
+[ext_resource type="Texture2D" uid="uid://oykopbrgylwg" path="res://items/button5.png" id="56_eo1ke"]
+[ext_resource type="Texture2D" uid="uid://dhgxat4nltha2" path="res://items/hat5.png" id="57_j5vj0"]
+[ext_resource type="Texture2D" uid="uid://c60rp0fg1stnv" path="res://items/button6.png" id="58_kec7f"]
+[ext_resource type="Texture2D" uid="uid://vlfnbch2a3yv" path="res://items/hat6.png" id="59_jgau6"]
+[ext_resource type="Texture2D" uid="uid://3jt2nudgyuy1" path="res://items/button4.png" id="60_6a1ct"]
+[ext_resource type="Texture2D" uid="uid://d8ip28ledcw" path="res://items/hat4.png" id="61_xhrfq"]
+[ext_resource type="Texture2D" uid="uid://cn612h0crodwn" path="res://items/button7.png" id="62_2xesh"]
+[ext_resource type="Texture2D" uid="uid://dur6vyo35ynes" path="res://items/hat7.png" id="63_jexbj"]
+[ext_resource type="Texture2D" uid="uid://cdmia3s85ssmb" path="res://items/glasses_button.png" id="64_0n3pv"]
+[ext_resource type="Texture2D" uid="uid://d87cqv1yfxhr" path="res://items/glasses_simple.png" id="65_lgnnt"]
+[ext_resource type="Texture2D" uid="uid://cutx3ipmk0h5f" path="res://sprites/sunshine.png" id="66_6r4by"]
+[ext_resource type="Texture2D" uid="uid://dihuioplferjb" path="res://items_buttons/lemon_button.png" id="67_0gito"]
+[ext_resource type="Script" uid="uid://ebh08ue7l00f" path="res://scripts/ingredient_button.gd" id="68_oh722"]
+[ext_resource type="Texture2D" uid="uid://cx5wugca73bob" path="res://blender_items/lemon.png" id="69_m4lup"]
+[ext_resource type="Texture2D" uid="uid://cwj7wpmcyc3pn" path="res://items_buttons/sugarcane.png" id="70_redio"]
+[ext_resource type="Texture2D" uid="uid://dgbt14v7x4na0" path="res://blender_items/sugarcane.png" id="71_aiee3"]
+[ext_resource type="Texture2D" uid="uid://qu1pxdb0moqb" path="res://items_buttons/mint.png" id="72_8ojta"]
+[ext_resource type="Texture2D" uid="uid://lx0fsdq7w4vu" path="res://blender_items/mint.png" id="73_kmcm6"]
+[ext_resource type="Texture2D" uid="uid://cwxxaj8rbt1b6" path="res://items_buttons/cucumber.png" id="74_8jwmc"]
+[ext_resource type="Texture2D" uid="uid://bivqbv350qjb8" path="res://blender_items/cucumber.png" id="75_ybi5g"]
+[ext_resource type="Texture2D" uid="uid://de48s2oyl8sel" path="res://items_buttons/hibiscus.png" id="76_f4wrh"]
+[ext_resource type="Texture2D" uid="uid://b4g3057hib517" path="res://blender_items/hibiscus.png" id="77_smy15"]
+[ext_resource type="Texture2D" uid="uid://djnyq16wf6rsx" path="res://items_buttons/ginger.png" id="78_d51im"]
+[ext_resource type="Texture2D" uid="uid://duys4462dfud7" path="res://blender_items/ginger.png" id="79_og54j"]
+[ext_resource type="Texture2D" uid="uid://ki1fh8kmnixv" path="res://items_buttons/watermelon.png" id="80_404go"]
+[ext_resource type="Texture2D" uid="uid://c77peniiqlpe6" path="res://blender_items/watermelon.png" id="81_54fa5"]
+[ext_resource type="Texture2D" uid="uid://gmcwb87xqjgd" path="res://items_buttons/strawberry.png" id="82_m2f0f"]
+[ext_resource type="Texture2D" uid="uid://ce0ek1w4niys5" path="res://blender_items/strawberry.png" id="83_41mld"]
+[ext_resource type="Texture2D" uid="uid://chrnwincbvgiy" path="res://items_buttons/tomato.png" id="84_j842w"]
+[ext_resource type="Texture2D" uid="uid://rtkdvr41pvg7" path="res://blender_items/tomato.png" id="85_m5a64"]
+[ext_resource type="Texture2D" uid="uid://by0ss457r0ke8" path="res://items_buttons/lavender.png" id="86_avkep"]
+[ext_resource type="Texture2D" uid="uid://dm5rpc4np1jfv" path="res://blender_items/lavender.png" id="87_sxhm0"]
+[ext_resource type="Texture2D" uid="uid://dpdgw46jf3121" path="res://sprites/glass.png" id="88_cx1dt"]
+[ext_resource type="Script" uid="uid://n2iu6rjcht1d" path="res://scripts/blender_slot.gd" id="89_y5dkp"]
+[ext_resource type="Texture2D" uid="uid://debyouoqom6lp" path="res://sprites/blender.sheet.png" id="90_skhuf"]
+[ext_resource type="Texture2D" uid="uid://bdv5nbdla1cnj" path="res://sprites/blender_button.png" id="91_gq2if"]
+[ext_resource type="Texture2D" uid="uid://mh2nrl3vdvss" path="res://sprites/blender_button_pressed.png" id="92_lwxg6"]
+[ext_resource type="Texture2D" uid="uid://bb7wsx864di6g" path="res://sprites/blender_button_hover.png" id="93_2b86i"]
+[ext_resource type="Texture2D" uid="uid://b8sfgi8qpa5n6" path="res://sprites/scene3.png" id="94_hkub5"]
+[ext_resource type="Texture2D" uid="uid://chtppqh1ysuh3" path="res://sprites/plot.png" id="95_b6g1r"]
+[ext_resource type="Script" uid="uid://pan8d7c24otm" path="res://scripts/plot.gd" id="96_4ahvx"]
+[ext_resource type="Texture2D" uid="uid://oxlc7r37jec" path="res://plant_buttons/lemon_button.png" id="96_hyoe7"]
+[ext_resource type="Texture2D" uid="uid://hy7o8k4ykuey" path="res://sprites/plant_seeded.png" id="96_yton5"]
+[ext_resource type="Texture2D" uid="uid://cugqjy7bparmr" path="res://sprites/plant_watered.png" id="97_4ahvx"]
+[ext_resource type="Texture2D" uid="uid://cns8fs3ot2b0y" path="res://plant_buttons/sugarcane_button.png" id="97_b7yds"]
+[ext_resource type="Texture2D" uid="uid://2ql7edu1bg7t" path="res://plant_buttons/mint_button.png" id="98_mnra2"]
+[ext_resource type="Texture2D" uid="uid://bbv1rxhpjw86g" path="res://plant_buttons/cucumber_button.png" id="99_jjh0s"]
+[ext_resource type="Script" uid="uid://dihna0ohj8gwo" path="res://scripts/seed_button.gd" id="100_1hbcg"]
+[ext_resource type="Texture2D" uid="uid://c8s8slvhlloyu" path="res://plant_buttons/ginger_button.png" id="100_34ffc"]
+[ext_resource type="Texture2D" uid="uid://cy2i1pvp27xhf" path="res://plant_buttons/hibiscus_button.png" id="101_5eoch"]
+[ext_resource type="Texture2D" uid="uid://dviais1tc6q0l" path="res://plant_buttons/strawberry_button.png" id="102_dl2iq"]
+[ext_resource type="Texture2D" uid="uid://duw0erva3e0ym" path="res://plant_buttons/watermelon_button.png" id="103_1nfnm"]
+[ext_resource type="Texture2D" uid="uid://bol1snqfu4e2n" path="res://plant_buttons/lavender_button.png" id="104_mm77e"]
+[ext_resource type="Texture2D" uid="uid://bocikbojxobur" path="res://plant_buttons/blue_berry_button.png" id="105_2yqmv"]
+[ext_resource type="Texture2D" uid="uid://chdmi1csm26gd" path="res://sprites/shop_scene.png" id="106_8lcmr"]
+[ext_resource type="Texture2D" uid="uid://bkexd3sawtfdm" path="res://sprites/sugarcane.png" id="107_888ul"]
+[ext_resource type="Texture2D" uid="uid://bsn5t5n2c5jup" path="res://sprites/mint_tree.png" id="108_ga3rw"]
+[ext_resource type="Texture2D" uid="uid://h2umd32m1wkc" path="res://sprites/ginger_tree.png" id="109_roort"]
+[ext_resource type="Texture2D" uid="uid://dloye57tyevhj" path="res://sprites/lemon_tree.png" id="110_f5chs"]
+[ext_resource type="Texture2D" uid="uid://dvtwpjynbl5j2" path="res://sprites/cucumber_tree.png" id="111_eh25q"]
+[ext_resource type="Texture2D" uid="uid://cupqpwrlyhw6c" path="res://sprites/strawberry_tree.png" id="112_joh2r"]
+[ext_resource type="Texture2D" uid="uid://cqyfcfvkpcrge" path="res://sprites/hibiscus_tree.png" id="113_yton5"]
+[ext_resource type="Texture2D" uid="uid://cbqik5unm5fkn" path="res://sprites/watermelon_tree.png" id="114_4ahvx"]
+[ext_resource type="Texture2D" uid="uid://bc77d7ikntwvk" path="res://sprites/lavender_tree.png" id="115_2cr71"]
+[ext_resource type="Texture2D" uid="uid://dwykrs8sp6gem" path="res://sprites/shadow.png" id="116_f5chs"]
+[ext_resource type="Texture2D" uid="uid://b4nr85puii0gh" path="res://sprites/watercan.png" id="116_ga3rw"]
+[ext_resource type="Texture2D" uid="uid://bsb7b1ivlidq1" path="res://sprites/blueberry_tree.png" id="119_m4o51"]
+[ext_resource type="Script" uid="uid://c26rgcqmion4e" path="res://scenes/waterpot.gd" id="120_m4o51"]
+[ext_resource type="Texture2D" uid="uid://c3a5kld75wsyu" path="res://sprites/water-Sheet.png" id="124_jp61a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jcovd"]
+bg_color = Color(0.2784314, 0.15294118, 0.18431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2yge"]
+bg_color = Color(0.15294118, 0.078431375, 0.11372549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vm84"]
+bg_color = Color(0.7764706, 0.27450982, 0.22352941, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2784314, 0.15294118, 0.18431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu3dr"]
+bg_color = Color(0.6117647, 0.22352941, 0.1764706, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2784314, 0.15294118, 0.18431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cyx1q"]
+bg_color = Color(0.7798818, 0.32406744, 0.27397957, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2784314, 0.15294118, 0.18431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4sjvi"]
+bg_color = Color(0.45882353, 0.5254902, 0.44705883, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2784314, 0.15294118, 0.18431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uatky"]
+bg_color = Color(0.34117648, 0.39215687, 0.43137255, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2784314, 0.15294118, 0.18431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rqtf5"]
+bg_color = Color(0.38431373, 0.5882353, 0.35686275, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2784314, 0.15294118, 0.18431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3pdg7"]
+bg_color = Color(0.9764706, 0.7607843, 0.5294118, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2784314, 0.15294118, 0.18431373, 1)
+
+[sub_resource type="Animation" id="Animation_53bls"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Blender:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_lwnsi"]
+resource_name = "default"
+length = 0.1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Blender:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_41lik"]
+resource_name = "on"
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Blender:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.39999998, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jbvwl"]
+_data = {
+&"RESET": SubResource("Animation_53bls"),
+&"default": SubResource("Animation_lwnsi"),
+&"on": SubResource("Animation_41lik")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcovd"]
+size = Vector2(104, 87)
+
+[sub_resource type="Animation" id="Animation_2cr71"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Watercan:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("water:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("water:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_1hbcg"]
+resource_name = "default"
+length = 0.1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Watercan:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("water:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_m4o51"]
+resource_name = "pour"
+length = 0.6
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("water:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("water:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.19999999, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [2, 1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jp61a"]
+_data = {
+&"RESET": SubResource("Animation_2cr71"),
+&"default": SubResource("Animation_1hbcg"),
+&"pour": SubResource("Animation_m4o51")
+}
+
+[node name="Main" type="Node2D" unique_id=382989355]
+script = ExtResource("1_engxj")
+male_bodies = Array[Texture2D]([ExtResource("2_raiwf"), ExtResource("3_roort"), ExtResource("4_gm02q"), ExtResource("5_07pt3"), ExtResource("6_37xlc")])
+female_bodies = Array[Texture2D]([ExtResource("7_83607"), ExtResource("8_vny5k"), ExtResource("9_8lcmr"), ExtResource("10_ga3rw"), ExtResource("11_f5chs")])
+male_default_face = ExtResource("12_eh25q")
+male_happy_face = ExtResource("13_joh2r")
+male_sad_face = ExtResource("14_yton5")
+female_default_face = ExtResource("15_4ahvx")
+female_happy_face = ExtResource("16_2cr71")
+female_sad_face = ExtResource("17_1hbcg")
+serve_reward = 100
+seed_drag_icon = ExtResource("18_jp61a")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1576791566]
+
+[node name="day_label" type="Label" parent="CanvasLayer" unique_id=2092600830]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -23.0
+offset_top = -22.0
+offset_right = 24.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.87058824, 0.85882354, 0.8235294, 1)
+theme_override_fonts/font = ExtResource("18_m4o51")
+theme_override_font_sizes/font_size = 20
+text = "DAY 1"
+
+[node name="coin" type="TextureRect" parent="CanvasLayer" unique_id=326211117]
+offset_left = 18.0
+offset_top = 343.0
+offset_right = 37.0
+offset_bottom = 361.0
+texture = ExtResource("19_jp61a")
+stretch_mode = 4
+
+[node name="coin_label" type="Label" parent="CanvasLayer" unique_id=1740964976]
+offset_left = 40.0
+offset_top = 338.0
+offset_right = 79.0
+offset_bottom = 361.0
+theme_override_colors/font_color = Color(0.87058824, 0.85882354, 0.8235294, 1)
+theme_override_fonts/font = ExtResource("18_m4o51")
+theme_override_font_sizes/font_size = 20
+text = "00"
+
+[node name="next" type="TextureButton" parent="CanvasLayer" unique_id=1160349614]
+offset_left = 570.0
+offset_right = 590.0
+offset_bottom = 20.000002
+texture_normal = ExtResource("20_esrwe")
+texture_pressed = ExtResource("21_4b36k")
+texture_hover = ExtResource("22_1v8b0")
+
+[node name="prev" type="TextureButton" parent="CanvasLayer" unique_id=1249845232]
+offset_left = 564.0
+offset_top = 20.000002
+offset_right = 584.0
+offset_bottom = 40.0
+rotation = 3.1415927
+texture_normal = ExtResource("20_esrwe")
+texture_pressed = ExtResource("21_4b36k")
+texture_hover = ExtResource("22_1v8b0")
+
+[node name="next2" type="TextureButton" parent="CanvasLayer" unique_id=1129384750]
+offset_left = 595.0
+offset_right = 615.0
+offset_bottom = 20.0
+texture_normal = ExtResource("23_683hg")
+texture_pressed = ExtResource("24_ow8of")
+texture_hover = ExtResource("25_hj4tt")
+
+[node name="bedroom" type="Node2D" parent="." unique_id=268131174]
+
+[node name="backgrounds_bedroom" type="Control" parent="bedroom" unique_id=285109131]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="Background" type="Panel" parent="bedroom/backgrounds_bedroom" unique_id=2071174393]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jcovd")
+
+[node name="Foreground2" type="Panel" parent="bedroom/backgrounds_bedroom" unique_id=454171131]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -303.0
+offset_top = -163.0
+offset_right = 303.0
+offset_bottom = 163.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h2yge")
+
+[node name="TextureRect" type="TextureRect" parent="bedroom/backgrounds_bedroom" unique_id=1518113698]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -160.0
+offset_right = 300.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("26_kqx4a")
+
+[node name="bed" type="TextureButton" parent="bedroom" unique_id=438611739]
+offset_left = 74.0
+offset_top = 102.0
+offset_right = 244.0
+offset_bottom = 262.0
+texture_normal = ExtResource("27_pfcs8")
+texture_hover = ExtResource("28_50d7c")
+
+[node name="sleep pos" type="Marker2D" parent="bedroom" unique_id=127664698]
+position = Vector2(154, 142)
+
+[node name="regular pos" type="Marker2D" parent="bedroom" unique_id=1735059653]
+position = Vector2(316, 185)
+
+[node name="millie" type="Node2D" parent="bedroom" unique_id=1017464588]
+position = Vector2(316, 185)
+
+[node name="CatoShadow" type="Sprite2D" parent="bedroom/millie" unique_id=1902054745]
+position = Vector2(1, 19)
+texture = ExtResource("29_ruytr")
+
+[node name="Cato" type="Sprite2D" parent="bedroom/millie" unique_id=1300715657]
+texture = ExtResource("30_la3dr")
+
+[node name="dress" type="Sprite2D" parent="bedroom" unique_id=177825865]
+position = Vector2(316, 185)
+
+[node name="glass" type="Sprite2D" parent="bedroom" unique_id=2015558617]
+position = Vector2(316, 185)
+
+[node name="hat" type="Sprite2D" parent="bedroom" unique_id=2053331497]
+position = Vector2(316, 185)
+
+[node name="buttons" type="VBoxContainer" parent="bedroom" unique_id=1887208718]
+texture_filter = 1
+offset_top = 241.0
+offset_right = 20.0
+offset_bottom = 333.0
+
+[node name="cross_button" type="TextureButton" parent="bedroom/buttons" unique_id=811930882]
+layout_mode = 2
+texture_normal = ExtResource("31_hcsi8")
+texture_pressed = ExtResource("32_wi1le")
+texture_hover = ExtResource("33_o7pr5")
+
+[node name="hatbutton" type="TextureButton" parent="bedroom/buttons" unique_id=1326449059]
+layout_mode = 2
+texture_normal = ExtResource("34_hyj2l")
+texture_pressed = ExtResource("35_vuqay")
+texture_hover = ExtResource("36_wfmv0")
+
+[node name="glassesbutton" type="TextureButton" parent="bedroom/buttons" unique_id=407132050]
+layout_mode = 2
+texture_normal = ExtResource("37_wxrqn")
+texture_pressed = ExtResource("38_n756u")
+texture_hover = ExtResource("39_k33j2")
+
+[node name="dressbutton" type="TextureButton" parent="bedroom/buttons" unique_id=152973402]
+layout_mode = 2
+texture_normal = ExtResource("40_2cjf7")
+texture_pressed = ExtResource("41_4e8e3")
+texture_hover = ExtResource("42_5gihh")
+
+[node name="dresses" type="MarginContainer" parent="bedroom" unique_id=192343238]
+visible = false
+offset_left = 31.0
+offset_top = 268.0
+offset_right = 612.0
+offset_bottom = 337.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="bedroom/dresses" unique_id=1389927254]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="bedroom/dresses/ScrollContainer" unique_id=190093251]
+layout_mode = 2
+columns = 2
+
+[node name="Red_sweater" type="TextureButton" parent="bedroom/dresses/ScrollContainer/GridContainer" unique_id=1198699828]
+layout_mode = 2
+texture_normal = ExtResource("43_407df")
+script = ExtResource("44_4sqen")
+dress_texture = ExtResource("45_w6a6y")
+
+[node name="coin_label" type="Label" parent="bedroom/dresses/ScrollContainer/GridContainer/Red_sweater" unique_id=1158636209]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = -19.0
+offset_right = 13.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.87058824, 0.85882354, 0.8235294, 1)
+theme_override_colors/font_outline_color = Color(0.15294118, 0.078431375, 0.11372549, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("18_m4o51")
+theme_override_font_sizes/font_size = 16
+text = "500"
+horizontal_alignment = 1
+
+[node name="coffee_sweater" type="TextureButton" parent="bedroom/dresses/ScrollContainer/GridContainer" unique_id=1773056076]
+layout_mode = 2
+texture_normal = ExtResource("46_knlx5")
+script = ExtResource("44_4sqen")
+dress_texture = ExtResource("47_pes4l")
+
+[node name="coin_label" type="Label" parent="bedroom/dresses/ScrollContainer/GridContainer/coffee_sweater" unique_id=224538616]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = -19.0
+offset_right = 13.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.87058824, 0.85882354, 0.8235294, 1)
+theme_override_colors/font_outline_color = Color(0.15294118, 0.078431375, 0.11372549, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("18_m4o51")
+theme_override_font_sizes/font_size = 16
+text = "500"
+horizontal_alignment = 1
+
+[node name="hats" type="MarginContainer" parent="bedroom" unique_id=1181271468]
+visible = false
+offset_left = 31.0
+offset_top = 268.0
+offset_right = 612.0
+offset_bottom = 337.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="bedroom/hats" unique_id=1740524516]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="bedroom/hats/ScrollContainer" unique_id=153091710]
+layout_mode = 2
+theme_override_constants/h_separation = 9
+columns = 8
+
+[node name="chef_hat" type="TextureButton" parent="bedroom/hats/ScrollContainer/GridContainer" unique_id=1711229001]
+layout_mode = 2
+texture_normal = ExtResource("48_s5e0g")
+script = ExtResource("44_4sqen")
+price = 300
+item_type = "hat"
+dress_texture = ExtResource("49_uya8e")
+
+[node name="coin_label" type="Label" parent="bedroom/hats/ScrollContainer/GridContainer/chef_hat" unique_id=904710100]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = -19.0
+offset_right = 13.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.87058824, 0.85882354, 0.8235294, 1)
+theme_override_colors/font_outline_color = Color(0.15294118, 0.078431375, 0.11372549, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("18_m4o51")
+theme_override_font_sizes/font_size = 16
+text = "300"
+horizontal_alignment = 1
+
+[node name="grandma_hat" type="TextureButton" parent="bedroom/hats/ScrollContainer/GridContainer" unique_id=1859057535]
+layout_mode = 2
+texture_normal = ExtResource("50_2tiby")
+script = ExtResource("44_4sqen")
+item_type = "hat"
+dress_texture = ExtResource("51_1m7le")
+
+[node name="coin_label" type="Label" parent="bedroom/hats/ScrollContainer/GridContainer/grandma_hat" unique_id=796676651]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = -19.0
+offset_right = 13.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.87058824, 0.85882354, 0.8235294, 1)
+theme_override_colors/font_outline_color = Color(0.15294118, 0.078431375, 0.11372549, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("18_m4o51")
+theme_override_font_sizes/font_size = 16
+text = "500"
+horizontal_alignment = 1
+
+[node name="picnic_hat" type="TextureButton" parent="bedroom/hats/ScrollContainer/GridContainer" unique_id=1969885719]
+layout_mode = 2
+texture_normal = ExtResource("52_qqwal")
+script = ExtResource("44_4sqen")
+price = 700
+item_type = "hat"
+dress_texture = ExtResource("53_qr8e4")
+
+[node name="coin_label" type="Label" parent="bedroom/hats/ScrollContainer/GridContainer/picnic_hat" unique_id=1585583002]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = -19.0
+offset_right = 13.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.87058824, 0.85882354, 0.8235294, 1)
+theme_override_colors/font_outline_color = Color(0.15294118, 0.078431375, 0.11372549, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("18_m4o51")
+theme_override_font_sizes/font_size = 16
+text = "700"
+horizontal_alignment = 1
+
+[node name="wizard_hat" type="TextureButton" parent="bedroom/hats/ScrollContainer/GridContainer" unique_id=1491624777]
+layout_mode = 2
+texture_normal = ExtResource("54_d7502")
+script = ExtResource("44_4sqen")
+price = 800
+item_type = "hat"
+dress_texture = ExtResource("55_avynn")
+
+[node name="coin_label" type="Label" parent="bedroom/hats/ScrollContainer/GridContainer/wizard_hat" unique_id=90015204]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = -19.0
+offset_right = 13.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.87058824, 0.85882354, 0.8235294, 1)
+theme_override_colors/font_outline_color = Color(0.15294118, 0.078431375, 0.11372549, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("18_m4o51")
+theme_override_font_sizes/font_size = 16
+text = "800"
+horizontal_alignment = 1
+
+[node name="fishes" type="TextureButton" parent="bedroom/hats/ScrollContainer/GridContainer" unique_id=2013481446]
+layout_mode = 2
+texture_normal = ExtResource("56_eo1ke")
+script = ExtResource("44_4sqen")
+price = 1000
+item_type = "hat"
+dress_texture = ExtResource("57_j5vj0")
+
+[node name="coin_label" type="Label" parent="bedroom/hats/ScrollContainer/GridContainer/fishes" unique_id=505215662]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = -19.0
+offset_right = 13.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.87058824, 0.85882354, 0.8235294, 1)
+theme_override_colors/font_outline_color = Color(0.15294118, 0.078431375, 0.11372549, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("18_m4o51")
+theme_override_font_sizes/font_size = 16
+text = "1000"
+horizontal_alignment = 1
+
+[node name="traffic_cone" type="TextureButton" parent="bedroom/hats/ScrollContainer/GridContainer" unique_id=615140989]
+layout_mode = 2
+texture_normal = ExtResource("58_kec7f")
+script = ExtResource("44_4sqen")
+price = 1200
+item_type = "hat"
+dress_texture = ExtResource("59_jgau6")
+
+[node name="coin_label" type="Label" parent="bedroom/hats/ScrollContainer/GridContainer/traffic_cone" unique_id=895810107]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = -19.0
+offset_right = 13.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.87058824, 0.85882354, 0.8235294, 1)
+theme_override_colors/font_outline_color = Color(0.15294118, 0.078431375, 0.11372549, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("18_m4o51")
+theme_override_font_sizes/font_size = 16
+text = "1200"
+horizontal_alignment = 1
+
+[node name="alien_hat" type="TextureButton" parent="bedroom/hats/ScrollContainer/GridContainer" unique_id=1653589936]
+layout_mode = 2
+texture_normal = ExtResource("60_6a1ct")
+script = ExtResource("44_4sqen")
+price = 1200
+item_type = "hat"
+dress_texture = ExtResource("61_xhrfq")
+
+[node name="coin_label" type="Label" parent="bedroom/hats/ScrollContainer/GridContainer/alien_hat" unique_id=1440110836]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = -19.0
+offset_right = 13.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.87058824, 0.85882354, 0.8235294, 1)
+theme_override_colors/font_outline_color = Color(0.15294118, 0.078431375, 0.11372549, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("18_m4o51")
+theme_override_font_sizes/font_size = 16
+text = "1200"
+horizontal_alignment = 1
+
+[node name="flower_hat" type="TextureButton" parent="bedroom/hats/ScrollContainer/GridContainer" unique_id=1975047965]
+layout_mode = 2
+texture_normal = ExtResource("62_2xesh")
+script = ExtResource("44_4sqen")
+price = 1500
+item_type = "hat"
+dress_texture = ExtResource("63_jexbj")
+
+[node name="coin_label" type="Label" parent="bedroom/hats/ScrollContainer/GridContainer/flower_hat" unique_id=814388413]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = -19.0
+offset_right = 13.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.87058824, 0.85882354, 0.8235294, 1)
+theme_override_colors/font_outline_color = Color(0.15294118, 0.078431375, 0.11372549, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("18_m4o51")
+theme_override_font_sizes/font_size = 16
+text = "1500"
+horizontal_alignment = 1
+
+[node name="glasses" type="MarginContainer" parent="bedroom" unique_id=329216644]
+visible = false
+offset_left = 31.0
+offset_top = 268.0
+offset_right = 612.0
+offset_bottom = 337.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="bedroom/glasses" unique_id=771980737]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="bedroom/glasses/ScrollContainer" unique_id=1704089769]
+layout_mode = 2
+columns = 2
+
+[node name="simple_glass" type="TextureButton" parent="bedroom/glasses/ScrollContainer/GridContainer" unique_id=1215176865]
+layout_mode = 2
+texture_normal = ExtResource("64_0n3pv")
+script = ExtResource("44_4sqen")
+price = 300
+item_type = "glass"
+dress_texture = ExtResource("65_lgnnt")
+
+[node name="coin_label" type="Label" parent="bedroom/glasses/ScrollContainer/GridContainer/simple_glass" unique_id=1708238754]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = -19.0
+offset_right = 13.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.87058824, 0.85882354, 0.8235294, 1)
+theme_override_colors/font_outline_color = Color(0.15294118, 0.078431375, 0.11372549, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("18_m4o51")
+theme_override_font_sizes/font_size = 16
+text = "500"
+horizontal_alignment = 1
+
+[node name="shop" type="Node2D" parent="." unique_id=1270991943]
+
+[node name="backgrounds_shop" type="Control" parent="shop" unique_id=1735254804]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 640.0
+offset_right = 1280.0
+offset_bottom = 360.0
+
+[node name="Background" type="Panel" parent="shop/backgrounds_shop" unique_id=1133967944]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jcovd")
+
+[node name="Foreground2" type="Panel" parent="shop/backgrounds_shop" unique_id=1842474170]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -303.0
+offset_top = -163.0
+offset_right = 303.0
+offset_bottom = 163.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h2yge")
+
+[node name="TextureRect" type="TextureRect" parent="shop/backgrounds_shop" unique_id=2012313556]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -160.0
+offset_right = 300.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("66_6r4by")
+
+[node name="item list" type="Control" parent="shop" unique_id=1956939778]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 640.0
+offset_right = 1280.0
+offset_bottom = 360.0
+
+[node name="lemon" type="TextureButton" parent="shop/item list" unique_id=1190406737]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 20.0
+offset_right = 548.0
+offset_bottom = 75.0
+texture_normal = ExtResource("67_0gito")
+script = ExtResource("68_oh722")
+ingredient_name = "Lemon"
+sweetness = 2
+coolness = 3
+icon_texture = ExtResource("69_m4lup")
+
+[node name="amount" type="Label" parent="shop/item list/lemon" unique_id=1050800339]
+layout_mode = 0
+offset_left = 6.0
+offset_right = 46.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("18_m4o51")
+text = "0"
+
+[node name="sugarcane" type="TextureButton" parent="shop/item list" unique_id=1391476018]
+layout_mode = 0
+offset_left = 548.0
+offset_top = 20.0
+offset_right = 620.0
+offset_bottom = 75.0
+texture_normal = ExtResource("70_redio")
+script = ExtResource("68_oh722")
+ingredient_name = "Sugarcane"
+sweetness = 9
+icon_texture = ExtResource("71_aiee3")
+
+[node name="amount" type="Label" parent="shop/item list/sugarcane" unique_id=1170748950]
+layout_mode = 0
+offset_left = 6.0
+offset_right = 46.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("18_m4o51")
+text = "0"
+
+[node name="mint" type="TextureButton" parent="shop/item list" unique_id=958718762]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 75.0
+offset_right = 548.0
+offset_bottom = 130.0
+texture_normal = ExtResource("72_8ojta")
+script = ExtResource("68_oh722")
+ingredient_name = "Mint"
+sweetness = 3
+coolness = 8
+icon_texture = ExtResource("73_kmcm6")
+
+[node name="amount" type="Label" parent="shop/item list/mint" unique_id=649160713]
+layout_mode = 0
+offset_left = 6.0
+offset_right = 46.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("18_m4o51")
+text = "0"
+
+[node name="cucumber" type="TextureButton" parent="shop/item list" unique_id=94004429]
+layout_mode = 0
+offset_left = 548.0
+offset_top = 75.0
+offset_right = 620.0
+offset_bottom = 130.0
+texture_normal = ExtResource("74_8jwmc")
+script = ExtResource("68_oh722")
+ingredient_name = "Cucumber"
+coolness = 9
+icon_texture = ExtResource("75_ybi5g")
+
+[node name="amount" type="Label" parent="shop/item list/cucumber" unique_id=569537267]
+layout_mode = 0
+offset_left = 6.0
+offset_right = 46.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("18_m4o51")
+text = "0"
+
+[node name="hibiscus" type="TextureButton" parent="shop/item list" unique_id=17490463]
+layout_mode = 0
+offset_left = 548.0
+offset_top = 130.0
+offset_right = 620.0
+offset_bottom = 185.0
+texture_normal = ExtResource("76_f4wrh")
+script = ExtResource("68_oh722")
+ingredient_name = "Hibiscus"
+sweetness = 4
+coolness = 3
+fizziness = 7
+icon_texture = ExtResource("77_smy15")
+
+[node name="amount" type="Label" parent="shop/item list/hibiscus" unique_id=1200200070]
+layout_mode = 0
+offset_left = 6.0
+offset_right = 46.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("18_m4o51")
+text = "0"
+
+[node name="ginger" type="TextureButton" parent="shop/item list" unique_id=1155358623]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 130.0
+offset_right = 548.0
+offset_bottom = 185.0
+texture_normal = ExtResource("78_d51im")
+script = ExtResource("68_oh722")
+ingredient_name = "Ginger"
+sweetness = 3
+coolness = 2
+fizziness = 8
+icon_texture = ExtResource("79_og54j")
+
+[node name="amount" type="Label" parent="shop/item list/ginger" unique_id=2112687568]
+layout_mode = 0
+offset_left = 6.0
+offset_right = 46.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("18_m4o51")
+text = "0"
+
+[node name="watermelon" type="TextureButton" parent="shop/item list" unique_id=1083015453]
+layout_mode = 0
+offset_left = 548.0
+offset_top = 185.0
+offset_right = 620.0
+offset_bottom = 240.0
+texture_normal = ExtResource("80_404go")
+script = ExtResource("68_oh722")
+ingredient_name = "Watermelon"
+sweetness = 7
+coolness = 6
+icon_texture = ExtResource("81_54fa5")
+
+[node name="amount" type="Label" parent="shop/item list/watermelon" unique_id=1571550780]
+layout_mode = 0
+offset_left = 6.0
+offset_right = 46.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("18_m4o51")
+text = "0"
+
+[node name="strawberry" type="TextureButton" parent="shop/item list" unique_id=336624054]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 185.0
+offset_right = 548.0
+offset_bottom = 240.0
+texture_normal = ExtResource("82_m2f0f")
+script = ExtResource("68_oh722")
+ingredient_name = "Strawberry"
+sweetness = 8
+coolness = 4
+fizziness = 2
+icon_texture = ExtResource("83_41mld")
+
+[node name="amount" type="Label" parent="shop/item list/strawberry" unique_id=245947124]
+layout_mode = 0
+offset_left = 6.0
+offset_right = 46.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("18_m4o51")
+text = "0"
+
+[node name="Passionfruit" type="TextureButton" parent="shop/item list" unique_id=1495438641]
+layout_mode = 0
+offset_left = 548.0
+offset_top = 240.0
+offset_right = 620.0
+offset_bottom = 295.0
+texture_normal = ExtResource("84_j842w")
+script = ExtResource("68_oh722")
+ingredient_name = "Passionfruit"
+sweetness = 6
+coolness = 5
+fizziness = 8
+icon_texture = ExtResource("85_m5a64")
+
+[node name="amount" type="Label" parent="shop/item list/Passionfruit" unique_id=199607449]
+layout_mode = 0
+offset_left = 6.0
+offset_right = 46.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("18_m4o51")
+text = "0"
+
+[node name="lavender" type="TextureButton" parent="shop/item list" unique_id=1957810369]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 240.0
+offset_right = 548.0
+offset_bottom = 295.0
+texture_normal = ExtResource("86_avkep")
+script = ExtResource("68_oh722")
+ingredient_name = "Lavender"
+sweetness = 3
+coolness = 7
+fizziness = 4
+icon_texture = ExtResource("87_sxhm0")
+
+[node name="amount" type="Label" parent="shop/item list/lavender" unique_id=1708440918]
+layout_mode = 0
+offset_left = 6.0
+offset_right = 46.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("18_m4o51")
+text = "0"
+
+[node name="glass" type="Node2D" parent="shop" unique_id=482191374]
+
+[node name="throw" type="Button" parent="shop/glass" unique_id=1583896226]
+offset_left = 936.0
+offset_top = 310.0
+offset_right = 994.0
+offset_bottom = 336.0
+theme_override_fonts/font = ExtResource("18_m4o51")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1vm84")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wu3dr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cyx1q")
+text = "Throw"
+
+[node name="serve" type="Button" parent="shop/glass" unique_id=909460165]
+offset_left = 873.0
+offset_top = 310.0
+offset_right = 931.0
+offset_bottom = 336.0
+theme_override_fonts/font = ExtResource("18_m4o51")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4sjvi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uatky")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rqtf5")
+text = "Serve"
+
+[node name="Glass_texture" type="Sprite2D" parent="shop/glass" unique_id=2032000791]
+z_index = 1
+position = Vector2(935, 278)
+texture = ExtResource("88_cx1dt")
+
+[node name="customer_spawn" type="Marker2D" parent="shop" unique_id=1129945082]
+position = Vector2(895, 142)
+
+[node name="blender" type="Node2D" parent="shop" unique_id=1293329274]
+
+[node name="items" type="Panel" parent="shop/blender" unique_id=1470208626]
+offset_left = 683.0
+offset_top = 115.0
+offset_right = 796.0
+offset_bottom = 172.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3pdg7")
+
+[node name="item1" type="TextureButton" parent="shop/blender/items" unique_id=1984086440]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.5
+offset_top = -15.5
+offset_right = -10.5
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("89_y5dkp")
+
+[node name="item2" type="TextureButton" parent="shop/blender/items" unique_id=1559392978]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 11.5
+offset_top = -15.5
+offset_right = 43.5
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("89_y5dkp")
+slot_index = 1
+
+[node name="Blender" type="Sprite2D" parent="shop/blender" unique_id=530398646]
+position = Vector2(739, 245)
+texture = ExtResource("90_skhuf")
+hframes = 3
+
+[node name="blender_button" type="TextureButton" parent="shop/blender" unique_id=849786974]
+offset_left = 728.0
+offset_top = 276.0
+offset_right = 746.0
+offset_bottom = 294.0
+texture_normal = ExtResource("91_gq2if")
+texture_pressed = ExtResource("92_lwxg6")
+texture_hover = ExtResource("93_2b86i")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="shop/blender" unique_id=399461267]
+libraries/ = SubResource("AnimationLibrary_jbvwl")
+
+[node name="farm" type="Node2D" parent="." unique_id=1949437355]
+position = Vector2(640, 0)
+
+[node name="backgrounds_shop" type="Control" parent="farm" unique_id=553137338]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 640.0
+offset_right = 1280.0
+offset_bottom = 360.0
+mouse_filter = 2
+
+[node name="Background" type="Panel" parent="farm/backgrounds_shop" unique_id=1835304660]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jcovd")
+
+[node name="Foreground2" type="Panel" parent="farm/backgrounds_shop" unique_id=605837916]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -303.0
+offset_top = -163.0
+offset_right = 303.0
+offset_bottom = 163.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h2yge")
+
+[node name="TextureRect" type="TextureRect" parent="farm/backgrounds_shop" unique_id=2007052095]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -160.0
+offset_right = 300.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("94_hkub5")
+
+[node name="Control" type="Control" parent="farm" unique_id=570608687]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 640.0
+offset_right = 1280.0
+offset_bottom = 360.0
+mouse_filter = 2
+
+[node name="plots" type="Control" parent="farm/Control" unique_id=2069984748]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -191.0
+offset_top = -51.0
+offset_right = 26.0
+offset_bottom = 154.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="plot1" type="TextureRect" parent="farm/Control/plots" unique_id=2002669648]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("95_b6g1r")
+script = ExtResource("96_4ahvx")
+
+[node name="seeded" type="TextureRect" parent="farm/Control/plots/plot1" unique_id=1153224873]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("96_yton5")
+
+[node name="watered" type="TextureRect" parent="farm/Control/plots/plot1" unique_id=1129823435]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("97_4ahvx")
+
+[node name="plant" type="TextureRect" parent="farm/Control/plots/plot1" unique_id=2042951715]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -119.0
+offset_right = 32.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="plot2" type="TextureRect" parent="farm/Control/plots" unique_id=1669360744]
+layout_mode = 0
+offset_top = 70.0
+offset_right = 64.0
+offset_bottom = 134.0
+texture = ExtResource("95_b6g1r")
+script = ExtResource("96_4ahvx")
+
+[node name="seeded" type="TextureRect" parent="farm/Control/plots/plot2" unique_id=2032123267]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("96_yton5")
+
+[node name="watered" type="TextureRect" parent="farm/Control/plots/plot2" unique_id=1820486347]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("97_4ahvx")
+
+[node name="plant" type="TextureRect" parent="farm/Control/plots/plot2" unique_id=1557280252]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -119.0
+offset_right = 32.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="plot3" type="TextureRect" parent="farm/Control/plots" unique_id=1258122603]
+layout_mode = 0
+offset_top = 140.0
+offset_right = 64.0
+offset_bottom = 204.0
+texture = ExtResource("95_b6g1r")
+script = ExtResource("96_4ahvx")
+
+[node name="seeded" type="TextureRect" parent="farm/Control/plots/plot3" unique_id=1050135989]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("96_yton5")
+
+[node name="watered" type="TextureRect" parent="farm/Control/plots/plot3" unique_id=1068133696]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("97_4ahvx")
+
+[node name="plant" type="TextureRect" parent="farm/Control/plots/plot3" unique_id=333866087]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -119.0
+offset_right = 32.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="plot4" type="TextureRect" parent="farm/Control/plots" unique_id=1113519309]
+layout_mode = 0
+offset_left = 76.0
+offset_right = 140.0
+offset_bottom = 64.0
+texture = ExtResource("95_b6g1r")
+script = ExtResource("96_4ahvx")
+
+[node name="seeded" type="TextureRect" parent="farm/Control/plots/plot4" unique_id=286874323]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("96_yton5")
+
+[node name="watered" type="TextureRect" parent="farm/Control/plots/plot4" unique_id=994904556]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("97_4ahvx")
+
+[node name="plant" type="TextureRect" parent="farm/Control/plots/plot4" unique_id=1108194180]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -119.0
+offset_right = 32.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="plot5" type="TextureRect" parent="farm/Control/plots" unique_id=487627731]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 70.0
+offset_right = 140.0
+offset_bottom = 134.0
+texture = ExtResource("95_b6g1r")
+script = ExtResource("96_4ahvx")
+
+[node name="seeded" type="TextureRect" parent="farm/Control/plots/plot5" unique_id=150233638]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("96_yton5")
+
+[node name="watered" type="TextureRect" parent="farm/Control/plots/plot5" unique_id=2139405624]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("97_4ahvx")
+
+[node name="plant" type="TextureRect" parent="farm/Control/plots/plot5" unique_id=515042006]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -119.0
+offset_right = 32.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="plot6" type="TextureRect" parent="farm/Control/plots" unique_id=1034536045]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 140.0
+offset_right = 140.0
+offset_bottom = 204.0
+texture = ExtResource("95_b6g1r")
+script = ExtResource("96_4ahvx")
+
+[node name="seeded" type="TextureRect" parent="farm/Control/plots/plot6" unique_id=2042317804]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("96_yton5")
+
+[node name="watered" type="TextureRect" parent="farm/Control/plots/plot6" unique_id=2143868450]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("97_4ahvx")
+
+[node name="plant" type="TextureRect" parent="farm/Control/plots/plot6" unique_id=1341032514]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -119.0
+offset_right = 32.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="plot7" type="TextureRect" parent="farm/Control/plots" unique_id=1834713021]
+layout_mode = 0
+offset_left = 153.0
+offset_right = 217.0
+offset_bottom = 64.0
+texture = ExtResource("95_b6g1r")
+script = ExtResource("96_4ahvx")
+
+[node name="seeded" type="TextureRect" parent="farm/Control/plots/plot7" unique_id=1175144639]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("96_yton5")
+
+[node name="watered" type="TextureRect" parent="farm/Control/plots/plot7" unique_id=104791824]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("97_4ahvx")
+
+[node name="plant" type="TextureRect" parent="farm/Control/plots/plot7" unique_id=787137358]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -119.0
+offset_right = 32.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="plot8" type="TextureRect" parent="farm/Control/plots" unique_id=714549819]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 70.0
+offset_right = 217.0
+offset_bottom = 134.0
+texture = ExtResource("95_b6g1r")
+script = ExtResource("96_4ahvx")
+
+[node name="seeded" type="TextureRect" parent="farm/Control/plots/plot8" unique_id=1002919559]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("96_yton5")
+
+[node name="watered" type="TextureRect" parent="farm/Control/plots/plot8" unique_id=1931726075]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("97_4ahvx")
+
+[node name="plant" type="TextureRect" parent="farm/Control/plots/plot8" unique_id=916170569]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -119.0
+offset_right = 32.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="plot9" type="TextureRect" parent="farm/Control/plots" unique_id=724154229]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 140.0
+offset_right = 217.0
+offset_bottom = 204.0
+texture = ExtResource("95_b6g1r")
+script = ExtResource("96_4ahvx")
+
+[node name="seeded" type="TextureRect" parent="farm/Control/plots/plot9" unique_id=114132451]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("96_yton5")
+
+[node name="watered" type="TextureRect" parent="farm/Control/plots/plot9" unique_id=1503042616]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("97_4ahvx")
+
+[node name="plant" type="TextureRect" parent="farm/Control/plots/plot9" unique_id=646068274]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -119.0
+offset_right = 32.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="buttons" type="Control" parent="farm" unique_id=428949785]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1132.0
+offset_top = 20.0
+offset_right = 1260.0
+offset_bottom = 339.0
+
+[node name="lemon" type="TextureButton" parent="farm/buttons" unique_id=850880949]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+texture_normal = ExtResource("96_hyoe7")
+script = ExtResource("100_1hbcg")
+plant_name = "Lemon"
+tree_texture = ExtResource("110_f5chs")
+
+[node name="amount" type="Label" parent="farm/buttons/lemon" unique_id=2137768920]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -4.0
+offset_right = 46.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("18_m4o51")
+theme_override_font_sizes/font_size = 24
+text = "0"
+
+[node name="sugarcane" type="TextureButton" parent="farm/buttons" unique_id=701725863]
+layout_mode = 0
+offset_left = 64.0
+offset_right = 128.0
+offset_bottom = 64.0
+texture_normal = ExtResource("97_b7yds")
+script = ExtResource("100_1hbcg")
+plant_name = "Sugarcane"
+tree_texture = ExtResource("107_888ul")
+
+[node name="amount" type="Label" parent="farm/buttons/sugarcane" unique_id=32473342]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -4.0
+offset_right = 46.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("18_m4o51")
+theme_override_font_sizes/font_size = 24
+text = "0"
+
+[node name="mint" type="TextureButton" parent="farm/buttons" unique_id=877675261]
+layout_mode = 0
+offset_top = 64.0
+offset_right = 64.0
+offset_bottom = 128.0
+texture_normal = ExtResource("98_mnra2")
+script = ExtResource("100_1hbcg")
+plant_name = "Mint"
+tree_texture = ExtResource("108_ga3rw")
+
+[node name="amount" type="Label" parent="farm/buttons/mint" unique_id=1843943934]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -4.0
+offset_right = 46.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("18_m4o51")
+theme_override_font_sizes/font_size = 24
+text = "0"
+
+[node name="cucumber" type="TextureButton" parent="farm/buttons" unique_id=912067721]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 128.0
+offset_bottom = 128.0
+texture_normal = ExtResource("99_jjh0s")
+script = ExtResource("100_1hbcg")
+plant_name = "Cucumber"
+tree_texture = ExtResource("111_eh25q")
+
+[node name="amount" type="Label" parent="farm/buttons/cucumber" unique_id=1324109006]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -4.0
+offset_right = 46.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("18_m4o51")
+theme_override_font_sizes/font_size = 24
+text = "0"
+
+[node name="ginger" type="TextureButton" parent="farm/buttons" unique_id=2102589346]
+layout_mode = 0
+offset_top = 128.0
+offset_right = 64.0
+offset_bottom = 192.0
+texture_normal = ExtResource("100_34ffc")
+script = ExtResource("100_1hbcg")
+plant_name = "Ginger"
+tree_texture = ExtResource("109_roort")
+
+[node name="amount" type="Label" parent="farm/buttons/ginger" unique_id=1658042237]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -4.0
+offset_right = 46.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("18_m4o51")
+theme_override_font_sizes/font_size = 24
+text = "0"
+
+[node name="hibiscus" type="TextureButton" parent="farm/buttons" unique_id=1198222515]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 128.0
+offset_right = 128.0
+offset_bottom = 192.0
+texture_normal = ExtResource("101_5eoch")
+script = ExtResource("100_1hbcg")
+plant_name = "Hibiscus"
+tree_texture = ExtResource("113_yton5")
+
+[node name="amount" type="Label" parent="farm/buttons/hibiscus" unique_id=1642875578]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -4.0
+offset_right = 46.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("18_m4o51")
+theme_override_font_sizes/font_size = 24
+text = "0"
+
+[node name="strawberry" type="TextureButton" parent="farm/buttons" unique_id=402618771]
+layout_mode = 0
+offset_top = 192.0
+offset_right = 64.0
+offset_bottom = 256.0
+texture_normal = ExtResource("102_dl2iq")
+script = ExtResource("100_1hbcg")
+plant_name = "Strawberry"
+tree_texture = ExtResource("112_joh2r")
+
+[node name="amount" type="Label" parent="farm/buttons/strawberry" unique_id=891740819]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -4.0
+offset_right = 46.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("18_m4o51")
+theme_override_font_sizes/font_size = 24
+text = "0"
+
+[node name="watermelon" type="TextureButton" parent="farm/buttons" unique_id=2018214590]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 192.0
+offset_right = 128.0
+offset_bottom = 256.0
+texture_normal = ExtResource("103_1nfnm")
+script = ExtResource("100_1hbcg")
+plant_name = "Watermelon"
+tree_texture = ExtResource("114_4ahvx")
+
+[node name="amount" type="Label" parent="farm/buttons/watermelon" unique_id=266854648]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -4.0
+offset_right = 46.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("18_m4o51")
+theme_override_font_sizes/font_size = 24
+text = "0"
+
+[node name="lavender" type="TextureButton" parent="farm/buttons" unique_id=757503806]
+layout_mode = 0
+offset_top = 256.0
+offset_right = 64.0
+offset_bottom = 320.0
+texture_normal = ExtResource("104_mm77e")
+script = ExtResource("100_1hbcg")
+plant_name = "Lavender"
+tree_texture = ExtResource("115_2cr71")
+
+[node name="amount" type="Label" parent="farm/buttons/lavender" unique_id=1986839123]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -4.0
+offset_right = 46.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("18_m4o51")
+theme_override_font_sizes/font_size = 24
+text = "0"
+
+[node name="passionfruit" type="TextureButton" parent="farm/buttons" unique_id=1726558396]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 256.0
+offset_right = 128.0
+offset_bottom = 320.0
+texture_normal = ExtResource("105_2yqmv")
+script = ExtResource("100_1hbcg")
+plant_name = "Passionfruit"
+tree_texture = ExtResource("119_m4o51")
+
+[node name="amount" type="Label" parent="farm/buttons/passionfruit" unique_id=419965746]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -4.0
+offset_right = 46.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("18_m4o51")
+theme_override_font_sizes/font_size = 24
+text = "0"
+
+[node name="waterpot" type="Area2D" parent="farm" unique_id=2073817254]
+position = Vector2(715, 307)
+script = ExtResource("120_m4o51")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="farm/waterpot" unique_id=1153083610]
+position = Vector2(-22, 9.5)
+shape = SubResource("RectangleShape2D_jcovd")
+
+[node name="Shadow" type="Sprite2D" parent="farm/waterpot" unique_id=1427268613]
+position = Vector2(-1, 28)
+texture = ExtResource("116_f5chs")
+
+[node name="Watercan" type="Sprite2D" parent="farm/waterpot" unique_id=2074601614]
+position = Vector2(-5, -6)
+texture = ExtResource("116_ga3rw")
+
+[node name="water" type="Sprite2D" parent="farm/waterpot" unique_id=164141998]
+visible = false
+position = Vector2(-66, 4)
+rotation = 0.20245819
+texture = ExtResource("124_jp61a")
+hframes = 3
+
+[node name="water_animation_player" type="AnimationPlayer" parent="farm/waterpot" unique_id=1800639307]
+libraries/ = SubResource("AnimationLibrary_jp61a")
+
+[node name="Marker2D" type="Marker2D" parent="farm/waterpot" unique_id=896349473]
+position = Vector2(-44, -2)
+
+[node name="left_top" type="Marker2D" parent="farm" unique_id=1413739828]
+position = Vector2(660, 72)
+
+[node name="right_top" type="Marker2D" parent="farm" unique_id=884151775]
+position = Vector2(1261, 72)
+
+[node name="left_bottom" type="Marker2D" parent="farm" unique_id=2047239869]
+position = Vector2(660, 325)
+
+[node name="right_bottom" type="Marker2D" parent="farm" unique_id=550196056]
+position = Vector2(1261, 325)
+
+[node name="seed_shop" type="Node2D" parent="." unique_id=1947468394]
+position = Vector2(1280, 0)
+
+[node name="backgrounds_shop" type="Control" parent="seed_shop" unique_id=2075010675]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 640.0
+offset_right = 1280.0
+offset_bottom = 360.0
+
+[node name="Background" type="Panel" parent="seed_shop/backgrounds_shop" unique_id=1852287983]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jcovd")
+
+[node name="Foreground2" type="Panel" parent="seed_shop/backgrounds_shop" unique_id=181352430]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -303.0
+offset_top = -163.0
+offset_right = 303.0
+offset_bottom = 163.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h2yge")
+
+[node name="TextureRect" type="TextureRect" parent="seed_shop/backgrounds_shop" unique_id=2135070704]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -160.0
+offset_right = 300.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("106_8lcmr")
+
+[node name="sugercane" type="TextureButton" parent="seed_shop" unique_id=874871397]
+offset_left = 1076.0
+offset_top = 36.0
+offset_right = 1117.0
+offset_bottom = 132.0
+texture_normal = ExtResource("107_888ul")
+ignore_texture_size = true
+
+[node name="mint" type="TextureButton" parent="seed_shop" unique_id=1993520176]
+offset_left = 1115.0
+offset_top = 36.0
+offset_right = 1160.0
+offset_bottom = 132.0
+texture_normal = ExtResource("108_ga3rw")
+ignore_texture_size = true
+
+[node name="lemon" type="TextureButton" parent="seed_shop" unique_id=1291289826]
+offset_left = 1023.0
+offset_top = 36.0
+offset_right = 1075.0
+offset_bottom = 132.0
+texture_normal = ExtResource("110_f5chs")
+ignore_texture_size = true
+
+[node name="cucumber" type="TextureButton" parent="seed_shop" unique_id=342071890]
+offset_left = 1160.0
+offset_top = 36.0
+offset_right = 1213.0
+offset_bottom = 132.0
+texture_normal = ExtResource("111_eh25q")
+ignore_texture_size = true
+
+[node name="ginger" type="TextureButton" parent="seed_shop" unique_id=4749311]
+offset_left = 1204.0
+offset_top = 36.0
+offset_right = 1246.0
+offset_bottom = 132.0
+texture_normal = ExtResource("109_roort")
+ignore_texture_size = true
+flip_h = true
+
+[node name="strawberry" type="TextureButton" parent="seed_shop" unique_id=1470519809]
+offset_left = 1114.0
+offset_top = 158.0
+offset_right = 1178.0
+offset_bottom = 254.0
+texture_normal = ExtResource("112_joh2r")
+flip_h = true
+
+[node name="watermelon" type="TextureButton" parent="seed_shop" unique_id=581544406]
+offset_left = 1076.0
+offset_top = 158.0
+offset_right = 1124.0
+offset_bottom = 254.0
+texture_normal = ExtResource("114_4ahvx")
+ignore_texture_size = true
+stretch_mode = 0
+flip_h = true
+
+[node name="hibiscus" type="TextureButton" parent="seed_shop" unique_id=1268061963]
+offset_left = 1020.0
+offset_top = 158.0
+offset_right = 1084.0
+offset_bottom = 254.0
+texture_normal = ExtResource("113_yton5")
+flip_h = true
+
+[node name="lavender" type="TextureButton" parent="seed_shop" unique_id=1147524146]
+offset_left = 1157.0
+offset_top = 158.0
+offset_right = 1221.0
+offset_bottom = 254.0
+texture_normal = ExtResource("115_2cr71")
+ignore_texture_size = true
+flip_h = true
+
+[node name="blueberry" type="TextureButton" parent="seed_shop" unique_id=1793580415]
+offset_left = 1202.0
+offset_top = 158.0
+offset_right = 1266.0
+offset_bottom = 254.0
+texture_normal = ExtResource("119_m4o51")
+ignore_texture_size = true
+flip_h = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=222251707]
+position = Vector2(320, 180)
+
+[connection signal="pressed" from="CanvasLayer/next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="CanvasLayer/prev" to="." method="_on_prev_pressed"]
+[connection signal="pressed" from="bedroom/buttons/cross_button" to="." method="_on_cross_button_pressed"]
+[connection signal="pressed" from="bedroom/buttons/hatbutton" to="." method="_on_hatbutton_pressed"]
+[connection signal="pressed" from="bedroom/buttons/glassesbutton" to="." method="_on_glassesbutton_pressed"]
+[connection signal="pressed" from="bedroom/buttons/dressbutton" to="." method="_on_dressbutton_pressed"]

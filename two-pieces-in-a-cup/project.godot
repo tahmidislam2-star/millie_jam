@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 Wardrobe="*uid://cj2fopcn0qhba"
 DrinkStand="*uid://bi503u2wnailc"
+FarmStand="*uid://ohtfx7mu34c8"
+WorldBounds="*uid://272wlt61aqka"
 
 [display]
 
