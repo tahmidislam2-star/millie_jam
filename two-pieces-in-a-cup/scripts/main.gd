@@ -196,6 +196,11 @@ func _on_bed_pressed() -> void:
 	for plot in get_tree().get_nodes_in_group("plots"):
 		plot.grow()
 
+	if current_customer != null:
+		current_customer.customer_left.disconnect(_on_customer_left)
+		current_customer.queue_free()
+		current_customer = null
+
 	customers_served_today = 0
 	max_customers_today = randi_range(4, 5)
 	spawn_customer()
