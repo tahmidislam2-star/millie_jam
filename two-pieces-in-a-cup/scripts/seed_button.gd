@@ -3,7 +3,8 @@ extends TextureButton
 @export var plant_name: String = ""
 @export var tree_texture: Texture2D
 @export var starting_seeds: int = 5
-
+@export var normal_color := Color.WHITE
+@export var hover_color := Color(1.2, 1.2, 1.2)
 @onready var amount_label: Label = $amount
 
 var dragging := false
@@ -13,6 +14,8 @@ func _ready() -> void:
 	FarmStand.register_plant(plant_name, tree_texture, starting_seeds)
 	FarmStand.seeds_changed.connect(_refresh)
 	button_down.connect(_on_button_down)
+	mouse_entered.connect(_on_mouse_entered)
+	mouse_exited.connect(_on_mouse_exited)
 	_refresh("")
 
 func _refresh(_name: String) -> void:
@@ -46,3 +49,9 @@ func _finish_drag(mouse_pos: Vector2) -> void:
 			break
 	drag_icon.queue_free()
 	drag_icon = null
+	
+func _on_mouse_entered() -> void:
+	create_tween().tween_property(self, "modulate", hover_color, 0.08)
+
+func _on_mouse_exited() -> void:
+	create_tween().tween_property(self, "modulate", normal_color, 0.08)

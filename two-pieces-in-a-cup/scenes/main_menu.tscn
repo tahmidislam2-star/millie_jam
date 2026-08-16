@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bqj0vrnuxc43u"]
+
+[ext_resource type="Script" uid="uid://scpqmo4c5eui" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="FontFile" uid="uid://uv6et6abcaiv" path="res://Born2bSportyFS.otf" id="1_l6cm7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekxnf"]
+bg_color = Color(0.45882353, 0.5254902, 0.44705883, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2784314, 0.15294118, 0.18431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqqt6"]
+bg_color = Color(0.34117648, 0.39215687, 0.43137255, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2784314, 0.15294118, 0.18431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
+bg_color = Color(0.38431373, 0.5882353, 0.35686275, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2784314, 0.15294118, 0.18431373, 1)
+
+[node name="MainMenu" type="Node2D" unique_id=2017441948]
+script = ExtResource("1_ekxnf")
+
+[node name="Control" type="Control" parent="." unique_id=1860474447]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="start" type="Button" parent="Control" unique_id=22694096]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -13.0
+offset_right = 29.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wu84c")
+text = "Start"
+
+[connection signal="pressed" from="Control/start" to="." method="_on_start_pressed"]

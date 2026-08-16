@@ -10,6 +10,11 @@ const CUSTOMER_SCENE := preload("res://scenes/customer.tscn")
 @onready var hats_container: MarginContainer = $bedroom/hats
 @onready var glasses_container: MarginContainer = $bedroom/glasses
 @onready var coin_label: Label = $CanvasLayer/coin_label
+@onready var millie: Node2D = $bedroom/millie
+@onready var heart: Sprite2D = $bedroom/heart
+@onready var heart_animation: AnimationPlayer = $bedroom/heart_animation
+@onready var cato: Sprite2D = $bedroom/millie/Cato
+@onready var pet_area: Area2D = $bedroom/millie/pat_area
 
 @onready var item_list: Control = $"shop/item list"
 @onready var drink_glass: Node2D = $shop/glass
@@ -18,6 +23,11 @@ const CUSTOMER_SCENE := preload("res://scenes/customer.tscn")
 @onready var blender_button: TextureButton = $shop/blender/blender_button
 @onready var customer_spawn: Node2D =$shop/customer_spawn
 @onready var animation_player: AnimationPlayer = $shop/blender/AnimationPlayer
+
+@onready var sleep_pos: Marker2D = $"bedroom/sleep pos"
+@onready var regular_pos: Marker2D = $"bedroom/regular pos"
+@onready var blackout: Panel = $bedroom/blackout
+
 
 @export var male_bodies: Array[Texture2D] = []      
 @export var female_bodies: Array[Texture2D] = []    
@@ -37,6 +47,35 @@ const CUSTOMER_SCENE := preload("res://scenes/customer.tscn")
 @onready var farm: Node2D = $farm
 @onready var buttons: Control = $farm/buttons
 @export var seed_drag_icon: Texture2D
+@onready var dialogue_box: Panel = $"seed_shop/Dialogue Box"
+@onready var label: Label = $"seed_shop/Dialogue Box/Label"
+
+var dialogue_lines: Array[String] = [
+	"You remind me of myself when I was younger.",
+	"Thank you.",
+	"What else do you need?",
+	"Anything else in your mind?",
+	"I will be here if you need me.",
+	"This is the oldest shop in town.",
+	"Take good care of your plants.",
+	"Good season for harvesting.",
+	"Nice weather today.",
+	"I will visit your stand one day.",
+	"What's good?",
+	"Millicious.",
+	"Bright and sunny today.",
+	"Nice to have a fellow plant lover around.",
+	"That will grow great.",
+	"How's your day going?",
+	"Whatever you need.",
+	"Nice day for fishing, huhah.",
+	"It's dangerous to go alone! Take this.",
+]
+
+var is_dialogue_showing := false
+const TYPEWRITER_SPEED := 0.03
+const DIALOGUE_HOLD_TIME := 1.5
+
 
 var customers_served_today := 0
 var max_customers_today := 0
@@ -48,6 +87,7 @@ var current_drink: Dictionary = {}
 var current_customer: Node2D = null
 var current_day := 1
 var current_scene_index := 0
+var is_sleeping := false
 const SCENE_BASE_X := 320
 const SCENE_Y := 180
 const SCENE_SPACING := 640
@@ -85,6 +125,11 @@ func _ready() -> void:
 	)
 	camera_2d.position = Vector2(SCENE_BASE_X, SCENE_Y)
 
+	FarmStand.seed_purchased.connect(_on_seed_purchased)
+	heart.visible = false
+	pet_area.petted.connect(_on_petted)
+	pet_area.pet_stopped.connect(_on_pet_stopped)
+	
 func _on_coins_changed(new_amount: int) -> void:
 	coin_label.text = str(new_amount)
 
@@ -92,6 +137,7 @@ func _on_item_equipped(item_type: String, texture: Texture2D) -> void:
 	if slot_sprites.has(item_type):
 		slot_sprites[item_type].texture = texture
 		slot_sprites[item_type].visible = true
+		slot_sprites[item_type].modulate.a = 1.0
 
 func _on_item_unequipped(item_type: String) -> void:
 	if slot_sprites.has(item_type):
@@ -191,6 +237,40 @@ func _on_customer_left(_satisfied: bool) -> void:
 	spawn_customer()
 
 func _on_bed_pressed() -> void:
+	if is_sleeping:
+		return
+	is_sleeping = true
+
+	dresses_container.visible = false
+	hats_container.visible = false
+	glasses_container.visible = false
+
+	var fade_out_group := create_tween().set_parallel(true)
+	fade_out_group.tween_property(millie, "modulate:a", 0.0, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	if dress.visible:
+		fade_out_group.tween_property(dress, "modulate:a", 0.0, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	if glass.visible:
+		fade_out_group.tween_property(glass, "modulate:a", 0.0, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	if hat.visible:
+		fade_out_group.tween_property(hat, "modulate:a", 0.0, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	await fade_out_group.finished
+
+	millie.position = sleep_pos.position
+	dress.visible = false
+	glass.visible = false
+	hat.visible = false
+
+	var fade_in_millie := create_tween()
+	fade_in_millie.tween_property(millie, "modulate:a", 1.0, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	await fade_in_millie.finished
+
+	blackout.visible = true
+	blackout.modulate.a = 0.0
+	var fade_in := create_tween()
+	fade_in.tween_property(blackout, "modulate:a", 1.0, 0.6)
+	await fade_in.finished
+
+	# day advance
 	current_day += 1
 	day_label.text = "DAY %d" % current_day
 	for plot in get_tree().get_nodes_in_group("plots"):
@@ -204,21 +284,87 @@ func _on_bed_pressed() -> void:
 	customers_served_today = 0
 	max_customers_today = randi_range(4, 5)
 	spawn_customer()
+	# fade in day
 
+	await get_tree().create_timer(1.0).timeout
 
+	var fade_out := create_tween()
+	fade_out.tween_property(blackout, "modulate:a", 0.0, 0.6)
+	await fade_out.finished
+	blackout.visible = false
+
+	var fade_out_millie2 := create_tween()
+	fade_out_millie2.tween_property(millie, "modulate:a", 0.0, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	await fade_out_millie2.finished
+
+	millie.position = regular_pos.position
+
+	dress.visible = Wardrobe.equipped.has("dress")
+	glass.visible = Wardrobe.equipped.has("glass")
+	hat.visible = Wardrobe.equipped.has("hat")
+	dress.modulate.a = 0.0
+	glass.modulate.a = 0.0
+	hat.modulate.a = 0.0
+
+	var fade_in_group := create_tween().set_parallel(true)
+	fade_in_group.tween_property(millie, "modulate:a", 1.0, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	if dress.visible:
+		fade_in_group.tween_property(dress, "modulate:a", 1.0, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	if glass.visible:
+		fade_in_group.tween_property(glass, "modulate:a", 1.0, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	if hat.visible:
+		fade_in_group.tween_property(hat, "modulate:a", 1.0, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	await fade_in_group.finished
+
+	is_sleeping = false
+	
 func _on_next_pressed() -> void:
-	if current_scene_index >= MAX_SCENE_INDEX:
+	if is_sleeping or current_scene_index >= MAX_SCENE_INDEX:
 		return
 	current_scene_index += 1
 	_move_camera_to_scene(current_scene_index)
 
 func _on_prev_pressed() -> void:
-	if current_scene_index <= 0:
+	if is_sleeping or current_scene_index <= 0:
 		return
 	current_scene_index -= 1
 	_move_camera_to_scene(current_scene_index)
-
+	
 func _move_camera_to_scene(index: int) -> void:
 	var target_x := SCENE_BASE_X + (SCENE_SPACING * index)
 	var target_pos := Vector2(target_x, SCENE_Y)
 	create_tween().tween_property(camera_2d, "position", target_pos, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+
+func _on_seed_purchased() -> void:
+	if is_dialogue_showing:
+		return
+	_show_random_dialogue()
+
+func _show_random_dialogue() -> void:
+	is_dialogue_showing = true
+	var line: String = dialogue_lines[randi() % dialogue_lines.size()]
+	label.text = ""
+	dialogue_box.visible = true
+
+	for i in line.length():
+		label.text += line[i]
+		await get_tree().create_timer(TYPEWRITER_SPEED).timeout
+
+	await get_tree().create_timer(DIALOGUE_HOLD_TIME).timeout
+
+	dialogue_box.visible = false
+	is_dialogue_showing = false
+
+
+func _on_close_pressed() -> void:
+	get_tree().quit() ## mainmenu later
+
+func _on_petted() -> void:
+	if is_sleeping:
+		return
+	heart.visible = true
+	heart_animation.play("pat_heart")
+
+func _on_pet_stopped() -> void:
+	heart_animation.stop()
+	heart.visible = false

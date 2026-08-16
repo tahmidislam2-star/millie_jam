@@ -30,7 +30,9 @@
 [ext_resource type="Texture2D" uid="uid://46hrvsooxfir" path="res://sprites/cat_bed.png" id="27_pfcs8"]
 [ext_resource type="Texture2D" uid="uid://n85cuxyswgm8" path="res://sprites/cat_bed_hover.png" id="28_50d7c"]
 [ext_resource type="Texture2D" uid="uid://dtawh31jh4647" path="res://sprites/cato_shadow.png" id="29_ruytr"]
+[ext_resource type="Texture2D" uid="uid://dyx0feev0nubp" path="res://sprites/heart.png" id="30_4b36k"]
 [ext_resource type="Texture2D" uid="uid://blhai7nolxaix" path="res://sprites/cato.png" id="30_la3dr"]
+[ext_resource type="Script" uid="uid://dw87ssrbgqy8u" path="res://scenes/pat_area.gd" id="31_1v8b0"]
 [ext_resource type="Texture2D" uid="uid://c4cbyvr2hyptj" path="res://buttons/cross.png" id="31_hcsi8"]
 [ext_resource type="Texture2D" uid="uid://bext8fsqe677n" path="res://buttons/cross_press.png" id="32_wi1le"]
 [ext_resource type="Texture2D" uid="uid://24qhxf64arfg" path="res://buttons/cross_hover.png" id="33_o7pr5"]
@@ -123,14 +125,61 @@
 [ext_resource type="Texture2D" uid="uid://dwykrs8sp6gem" path="res://sprites/shadow.png" id="116_f5chs"]
 [ext_resource type="Texture2D" uid="uid://b4nr85puii0gh" path="res://sprites/watercan.png" id="116_ga3rw"]
 [ext_resource type="Texture2D" uid="uid://bsb7b1ivlidq1" path="res://sprites/blueberry_tree.png" id="119_m4o51"]
-[ext_resource type="Script" uid="uid://c26rgcqmion4e" path="res://scenes/waterpot.gd" id="120_m4o51"]
+[ext_resource type="Script" uid="uid://c26rgcqmion4e" path="res://scripts/waterpot.gd" id="120_m4o51"]
 [ext_resource type="Texture2D" uid="uid://c3a5kld75wsyu" path="res://sprites/water-Sheet.png" id="124_jp61a"]
+[ext_resource type="Script" uid="uid://bwes0os1bmktl" path="res://scripts/seeds_buy.gd" id="126_esrwe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jcovd"]
 bg_color = Color(0.2784314, 0.15294118, 0.18431373, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2yge"]
 bg_color = Color(0.15294118, 0.078431375, 0.11372549, 1)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xrivr"]
+radius = 44.000015
+height = 140.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xrivr"]
+bg_color = Color(0.09620481, 0.09620472, 0.09620469, 0.63529414)
+
+[sub_resource type="Animation" id="Animation_1v8b0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("heart:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_683hg"]
+resource_name = "pat_heart"
+length = 0.6
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("heart:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.39999998),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ow8of"]
+_data = {
+&"RESET": SubResource("Animation_1v8b0"),
+&"pat_heart": SubResource("Animation_683hg")
+}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vm84"]
 bg_color = Color(0.7764706, 0.27450982, 0.22352941, 1)
@@ -222,6 +271,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_41lik"]
 resource_name = "on"
+length = 2.0
 step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -230,10 +280,10 @@ tracks/0/path = NodePath("Blender:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.39999998, 0.6, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.39999998, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 1, 0]
+"values": [0, 1, 2, 1, 0, 1, 2, 1, 0, 1]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jbvwl"]
@@ -351,6 +401,19 @@ _data = {
 &"pour": SubResource("Animation_m4o51")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_esrwe"]
+bg_color = Color(0.89411765, 0.62352943, 0.3882353, 1)
+border_width_bottom = 6
+border_color = Color(0.59607846, 0.34509805, 0.29803923, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13qdw"]
+bg_color = Color(0.89411765, 0.62352943, 0.3882353, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.40392157, 0.20784314, 0.21176471, 1)
+
 [node name="Main" type="Node2D" unique_id=382989355]
 script = ExtResource("1_engxj")
 male_bodies = Array[Texture2D]([ExtResource("2_raiwf"), ExtResource("3_roort"), ExtResource("4_gm02q"), ExtResource("5_07pt3"), ExtResource("6_37xlc")])
@@ -361,7 +424,7 @@ male_sad_face = ExtResource("14_yton5")
 female_default_face = ExtResource("15_4ahvx")
 female_happy_face = ExtResource("16_2cr71")
 female_sad_face = ExtResource("17_1hbcg")
-serve_reward = 100
+serve_reward = 200
 seed_drag_icon = ExtResource("18_jp61a")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1576791566]
@@ -419,7 +482,7 @@ texture_normal = ExtResource("20_esrwe")
 texture_pressed = ExtResource("21_4b36k")
 texture_hover = ExtResource("22_1v8b0")
 
-[node name="next2" type="TextureButton" parent="CanvasLayer" unique_id=1129384750]
+[node name="close" type="TextureButton" parent="CanvasLayer" unique_id=1129384750]
 offset_left = 595.0
 offset_right = 615.0
 offset_bottom = 20.0
@@ -434,6 +497,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
 offset_bottom = 360.0
+mouse_filter = 2
 
 [node name="Background" type="Panel" parent="bedroom/backgrounds_bedroom" unique_id=2071174393]
 layout_mode = 1
@@ -489,13 +553,29 @@ texture_normal = ExtResource("27_pfcs8")
 texture_hover = ExtResource("28_50d7c")
 
 [node name="sleep pos" type="Marker2D" parent="bedroom" unique_id=127664698]
+visible = false
 position = Vector2(154, 142)
 
 [node name="regular pos" type="Marker2D" parent="bedroom" unique_id=1735059653]
+visible = false
 position = Vector2(316, 185)
+
+[node name="heart" type="Sprite2D" parent="bedroom" unique_id=1502192733]
+visible = false
+position = Vector2(364, 153)
+texture = ExtResource("30_4b36k")
+hframes = 3
 
 [node name="millie" type="Node2D" parent="bedroom" unique_id=1017464588]
 position = Vector2(316, 185)
+
+[node name="pat_area" type="Area2D" parent="bedroom/millie" unique_id=526898123]
+position = Vector2(16, 39)
+script = ExtResource("31_1v8b0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bedroom/millie/pat_area" unique_id=1446119863]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_xrivr")
 
 [node name="CatoShadow" type="Sprite2D" parent="bedroom/millie" unique_id=1902054745]
 position = Vector2(1, 19)
@@ -899,6 +979,15 @@ theme_override_fonts/font = ExtResource("18_m4o51")
 theme_override_font_sizes/font_size = 16
 text = "500"
 horizontal_alignment = 1
+
+[node name="blackout" type="Panel" parent="bedroom" unique_id=1085626851]
+visible = false
+offset_right = 640.0
+offset_bottom = 360.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xrivr")
+
+[node name="heart_animation" type="AnimationPlayer" parent="bedroom" unique_id=717559201]
+libraries/ = SubResource("AnimationLibrary_ow8of")
 
 [node name="shop" type="Node2D" parent="." unique_id=1270991943]
 
@@ -1880,7 +1969,7 @@ theme_override_font_sizes/font_size = 24
 text = "0"
 
 [node name="waterpot" type="Area2D" parent="farm" unique_id=2073817254]
-position = Vector2(715, 307)
+position = Vector2(715, 293)
 script = ExtResource("120_m4o51")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="farm/waterpot" unique_id=1153083610]
@@ -1888,16 +1977,15 @@ position = Vector2(-22, 9.5)
 shape = SubResource("RectangleShape2D_jcovd")
 
 [node name="Shadow" type="Sprite2D" parent="farm/waterpot" unique_id=1427268613]
-position = Vector2(-1, 28)
+position = Vector2(4, 34)
 texture = ExtResource("116_f5chs")
 
 [node name="Watercan" type="Sprite2D" parent="farm/waterpot" unique_id=2074601614]
-position = Vector2(-5, -6)
 texture = ExtResource("116_ga3rw")
 
 [node name="water" type="Sprite2D" parent="farm/waterpot" unique_id=164141998]
 visible = false
-position = Vector2(-66, 4)
+position = Vector2(-61, 10)
 rotation = 0.20245819
 texture = ExtResource("124_jp61a")
 hframes = 3
@@ -1976,63 +2064,188 @@ grow_vertical = 2
 texture = ExtResource("106_8lcmr")
 
 [node name="sugercane" type="TextureButton" parent="seed_shop" unique_id=874871397]
-offset_left = 1076.0
+offset_left = 1075.0
 offset_top = 36.0
-offset_right = 1117.0
+offset_right = 1116.0
 offset_bottom = 132.0
 texture_normal = ExtResource("107_888ul")
 ignore_texture_size = true
+script = ExtResource("126_esrwe")
+plant_name = "Sugarcane"
+price = 30
+
+[node name="Label" type="Label" parent="seed_shop/sugercane" unique_id=284396982]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 115.0
+offset_right = 66.0
+offset_bottom = 138.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("18_m4o51")
+text = "30"
+
+[node name="coin" type="TextureRect" parent="seed_shop/sugercane" unique_id=1584312668]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 117.0
+offset_right = 26.0
+offset_bottom = 135.0
+texture = ExtResource("19_jp61a")
+stretch_mode = 4
 
 [node name="mint" type="TextureButton" parent="seed_shop" unique_id=1993520176]
-offset_left = 1115.0
+offset_left = 1114.0
 offset_top = 36.0
-offset_right = 1160.0
+offset_right = 1159.0
 offset_bottom = 132.0
 texture_normal = ExtResource("108_ga3rw")
 ignore_texture_size = true
+script = ExtResource("126_esrwe")
+plant_name = "Mint"
+price = 40
+
+[node name="coin" type="TextureRect" parent="seed_shop/mint" unique_id=2135958177]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 117.0
+offset_right = 30.0
+offset_bottom = 135.0
+texture = ExtResource("19_jp61a")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="seed_shop/mint" unique_id=183093680]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 115.0
+offset_right = 69.0
+offset_bottom = 138.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("18_m4o51")
+text = "40"
 
 [node name="lemon" type="TextureButton" parent="seed_shop" unique_id=1291289826]
-offset_left = 1023.0
+offset_left = 1022.0
 offset_top = 36.0
-offset_right = 1075.0
+offset_right = 1074.0
 offset_bottom = 132.0
 texture_normal = ExtResource("110_f5chs")
 ignore_texture_size = true
+script = ExtResource("126_esrwe")
+plant_name = "Lemon"
+
+[node name="coin" type="TextureRect" parent="seed_shop/lemon" unique_id=1729589266]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 117.0
+offset_right = 34.0
+offset_bottom = 135.0
+texture = ExtResource("19_jp61a")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="seed_shop/lemon" unique_id=130577278]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 115.0
+offset_right = 73.0
+offset_bottom = 138.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("18_m4o51")
+text = "20"
 
 [node name="cucumber" type="TextureButton" parent="seed_shop" unique_id=342071890]
-offset_left = 1160.0
+offset_left = 1159.0
 offset_top = 36.0
-offset_right = 1213.0
+offset_right = 1212.0
 offset_bottom = 132.0
 texture_normal = ExtResource("111_eh25q")
 ignore_texture_size = true
+script = ExtResource("126_esrwe")
+plant_name = "Cucumber"
+price = 40
+
+[node name="coin" type="TextureRect" parent="seed_shop/cucumber" unique_id=1169714159]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 117.0
+offset_right = 31.0
+offset_bottom = 135.0
+texture = ExtResource("19_jp61a")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="seed_shop/cucumber" unique_id=2031610888]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 115.0
+offset_right = 70.0
+offset_bottom = 138.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("18_m4o51")
+text = "40"
 
 [node name="ginger" type="TextureButton" parent="seed_shop" unique_id=4749311]
-offset_left = 1204.0
+offset_left = 1203.0
 offset_top = 36.0
-offset_right = 1246.0
+offset_right = 1245.0
 offset_bottom = 132.0
 texture_normal = ExtResource("109_roort")
 ignore_texture_size = true
-flip_h = true
+script = ExtResource("126_esrwe")
+plant_name = "Ginger"
+price = 50
+
+[node name="coin" type="TextureRect" parent="seed_shop/ginger" unique_id=835428629]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 117.0
+offset_right = 33.0
+offset_bottom = 135.0
+texture = ExtResource("19_jp61a")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="seed_shop/ginger" unique_id=1753133142]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 115.0
+offset_right = 72.0
+offset_bottom = 138.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("18_m4o51")
+text = "50"
 
 [node name="strawberry" type="TextureButton" parent="seed_shop" unique_id=1470519809]
-offset_left = 1114.0
+offset_left = 1112.0
 offset_top = 158.0
-offset_right = 1178.0
+offset_right = 1176.0
 offset_bottom = 254.0
 texture_normal = ExtResource("112_joh2r")
-flip_h = true
+script = ExtResource("126_esrwe")
+plant_name = "Strawberry"
+price = 70
 
-[node name="watermelon" type="TextureButton" parent="seed_shop" unique_id=581544406]
-offset_left = 1076.0
-offset_top = 158.0
-offset_right = 1124.0
-offset_bottom = 254.0
-texture_normal = ExtResource("114_4ahvx")
-ignore_texture_size = true
-stretch_mode = 0
-flip_h = true
+[node name="coin" type="TextureRect" parent="seed_shop/strawberry" unique_id=1319355356]
+layout_mode = 1
+offset_left = 14.0
+offset_top = 117.0
+offset_right = 33.0
+offset_bottom = 135.0
+texture = ExtResource("19_jp61a")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="seed_shop/strawberry" unique_id=394732185]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 115.0
+offset_right = 72.0
+offset_bottom = 138.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("18_m4o51")
+text = "70"
 
 [node name="hibiscus" type="TextureButton" parent="seed_shop" unique_id=1268061963]
 offset_left = 1020.0
@@ -2040,7 +2253,29 @@ offset_top = 158.0
 offset_right = 1084.0
 offset_bottom = 254.0
 texture_normal = ExtResource("113_yton5")
-flip_h = true
+script = ExtResource("126_esrwe")
+plant_name = "Hibiscus"
+price = 50
+
+[node name="coin" type="TextureRect" parent="seed_shop/hibiscus" unique_id=1262156846]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 117.0
+offset_right = 36.0
+offset_bottom = 135.0
+texture = ExtResource("19_jp61a")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="seed_shop/hibiscus" unique_id=1669464130]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 115.0
+offset_right = 75.0
+offset_bottom = 138.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("18_m4o51")
+text = "50"
 
 [node name="lavender" type="TextureButton" parent="seed_shop" unique_id=1147524146]
 offset_left = 1157.0
@@ -2049,7 +2284,29 @@ offset_right = 1221.0
 offset_bottom = 254.0
 texture_normal = ExtResource("115_2cr71")
 ignore_texture_size = true
-flip_h = true
+script = ExtResource("126_esrwe")
+plant_name = "Lavender"
+price = 90
+
+[node name="coin" type="TextureRect" parent="seed_shop/lavender" unique_id=1877025584]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 117.0
+offset_right = 34.0
+offset_bottom = 135.0
+texture = ExtResource("19_jp61a")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="seed_shop/lavender" unique_id=1638778255]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 115.0
+offset_right = 73.0
+offset_bottom = 138.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("18_m4o51")
+text = "90"
 
 [node name="blueberry" type="TextureButton" parent="seed_shop" unique_id=1793580415]
 offset_left = 1202.0
@@ -2058,13 +2315,95 @@ offset_right = 1266.0
 offset_bottom = 254.0
 texture_normal = ExtResource("119_m4o51")
 ignore_texture_size = true
-flip_h = true
+script = ExtResource("126_esrwe")
+plant_name = "Blueberry"
+price = 100
+
+[node name="coin" type="TextureRect" parent="seed_shop/blueberry" unique_id=1283061569]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 117.0
+offset_right = 35.0
+offset_bottom = 135.0
+texture = ExtResource("19_jp61a")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="seed_shop/blueberry" unique_id=1422700705]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 115.0
+offset_right = 74.0
+offset_bottom = 138.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("18_m4o51")
+text = "100"
+
+[node name="Watermelon" type="TextureButton" parent="seed_shop" unique_id=1735045987]
+offset_left = 1064.0
+offset_top = 158.0
+offset_right = 1128.0
+offset_bottom = 254.0
+texture_normal = ExtResource("114_4ahvx")
+script = ExtResource("126_esrwe")
+plant_name = "Watermelon"
+price = 50
+
+[node name="coin" type="TextureRect" parent="seed_shop/Watermelon" unique_id=1804936740]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 117.0
+offset_right = 36.0
+offset_bottom = 135.0
+texture = ExtResource("19_jp61a")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="seed_shop/Watermelon" unique_id=361009019]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 115.0
+offset_right = 75.0
+offset_bottom = 138.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("18_m4o51")
+text = "50"
+
+[node name="Dialogue Box" type="Panel" parent="seed_shop" unique_id=546819381]
+visible = false
+offset_left = 678.0
+offset_top = 98.0
+offset_right = 812.0
+offset_bottom = 171.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_esrwe")
+
+[node name="Label" type="Label" parent="seed_shop/Dialogue Box" unique_id=1625814750]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 129.0
+offset_bottom = 62.0
+theme_override_colors/font_outline_color = Color(0.40392157, 0.20784314, 0.21176471, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("18_m4o51")
+text = "Hello"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_group_ = true
+
+[node name="shadow" type="Panel" parent="seed_shop/Dialogue Box" unique_id=64949515]
+layout_mode = 0
+offset_right = 134.0
+offset_bottom = 73.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_13qdw")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=222251707]
 position = Vector2(320, 180)
 
 [connection signal="pressed" from="CanvasLayer/next" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="CanvasLayer/prev" to="." method="_on_prev_pressed"]
+[connection signal="pressed" from="CanvasLayer/close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="bedroom/buttons/cross_button" to="." method="_on_cross_button_pressed"]
 [connection signal="pressed" from="bedroom/buttons/hatbutton" to="." method="_on_hatbutton_pressed"]
 [connection signal="pressed" from="bedroom/buttons/glassesbutton" to="." method="_on_glassesbutton_pressed"]

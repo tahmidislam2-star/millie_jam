@@ -1,22 +1,26 @@
 extends TextureButton
-@export var slot_index: int = 0
+
+@export var plant_name: String = ""
+@export var price: int = 20
+
+@onready var price_label: Label = $Label
+
 var border: TextureRect
 
 func _ready() -> void:
-	DrinkStand.blender_updated.connect(_refresh)
-	pressed.connect(_on_pressed)
+	price_label.text = str(price)
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
+	pressed.connect(_on_pressed)
 
 	border = TextureRect.new()
+	border.texture = texture_normal
 	border.material = _make_outline_material()
 	border.size = size
 	border.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	border.visible = false
 	add_child(border)
 	move_child(border, 0)
-
-	_refresh()
 
 func _make_outline_material() -> ShaderMaterial:
 	var shader := Shader.new()
@@ -44,25 +48,13 @@ void fragment() {
 	return mat
 
 func _on_mouse_entered() -> void:
-	if visible:
-		border.visible = true
+	border.visible = true
 
 func _on_mouse_exited() -> void:
 	border.visible = false
 
-func _refresh() -> void:
-	var entry = DrinkStand.blender_slots[slot_index]
-	if entry:
-		texture_normal = DrinkStand.ingredients[entry.name].texture
-		border.texture = texture_normal
-		visible = true
-	else:
-		visible = false
-		border.visible = false
-
 func _on_pressed() -> void:
-	var entry = DrinkStand.blender_slots[slot_index]
-	if entry == null:
+	if not Wardrobe.spend(price):
 		return
-	var ing_name = DrinkStand.remove_from_blender(slot_index)
-	DrinkStand.return_ingredient(ing_name)
+	FarmStand.add_seed(plant_name, 1)
+	FarmStand.seed_purchased.emit()
