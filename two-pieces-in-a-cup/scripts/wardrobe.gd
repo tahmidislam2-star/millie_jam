@@ -4,7 +4,7 @@ signal coins_changed(new_amount: int)
 signal item_equipped(item_type: String, texture: Texture2D)
 signal item_unequipped(item_type: String)
 
-var coins: int = 2000
+var coins: int = 20000
 var equipped: Dictionary = {}
 
 func can_afford(price: int) -> bool:

@@ -1,10 +1,15 @@
 extends Node2D
 
-func _ready() -> void:
-	pass
+@onready var start_button: Button = $Control/start
 
-func _process(_delta: float) -> void:
-	pass
+var start_pressed: bool = false
+
+func _ready() -> void:
+	start_button.toggle_mode = true
 
 func _on_start_pressed() -> void:
-	SceneTransition.change_scene("res://scenes/main.tscn")
+	if start_pressed == false:
+		start_pressed = true
+		start_button.button_pressed = true
+		start_button.disabled = true
+		SceneTransition.change_scene("res://scenes/main.tscn")

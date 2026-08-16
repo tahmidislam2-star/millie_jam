@@ -53,6 +53,7 @@ theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wu84c")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_bqqt6")
 text = "Start"
 
 [connection signal="pressed" from="Control/start" to="." method="_on_start_pressed"]

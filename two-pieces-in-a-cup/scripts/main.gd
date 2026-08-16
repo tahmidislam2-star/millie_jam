@@ -49,6 +49,7 @@ const CUSTOMER_SCENE := preload("res://scenes/customer.tscn")
 @export var seed_drag_icon: Texture2D
 @onready var dialogue_box: Panel = $"seed_shop/Dialogue Box"
 @onready var label: Label = $"seed_shop/Dialogue Box/Label"
+@onready var shop_closed: Label = $shop/shop_closed
 
 var dialogue_lines: Array[String] = [
 	"You remind me of myself when I was younger.",
@@ -76,6 +77,8 @@ var is_dialogue_showing := false
 const TYPEWRITER_SPEED := 0.03
 const DIALOGUE_HOLD_TIME := 1.5
 
+var shop_closed_text: String = ""
+
 
 var customers_served_today := 0
 var max_customers_today := 0
@@ -92,6 +95,9 @@ const SCENE_BASE_X := 320
 const SCENE_Y := 180
 const SCENE_SPACING := 640
 const MAX_SCENE_INDEX := 3
+const SHOP_CLOSED_HOLD_TIME := 2.0
+const DAILY_FREE_SEED_POOL := ["Lemon", "Sugarcane", "Mint", "Cucumber"]
+const DAILY_FREE_SEED_COUNT := 4
 
 #scene 3_boundary
 @onready var left_top: Marker2D = $farm/left_top
@@ -129,7 +135,11 @@ func _ready() -> void:
 	heart.visible = false
 	pet_area.petted.connect(_on_petted)
 	pet_area.pet_stopped.connect(_on_pet_stopped)
-	
+	shop_closed_text = shop_closed.text
+	shop_closed.visible = false
+	shop_closed.text = ""
+	print("FarmStand seeds: ", FarmStand.seeds)
+		
 func _on_coins_changed(new_amount: int) -> void:
 	coin_label.text = str(new_amount)
 
@@ -198,6 +208,7 @@ func _on_serve_pressed() -> void:
 func spawn_customer() -> void:
 	if customers_served_today >= max_customers_today:
 		current_customer = null
+		_show_shop_closed()
 		return
 
 	var is_male: bool
@@ -283,6 +294,7 @@ func _on_bed_pressed() -> void:
 
 	customers_served_today = 0
 	max_customers_today = randi_range(4, 5)
+	_grant_daily_seeds()
 	spawn_customer()
 	# fade in day
 
@@ -354,8 +366,25 @@ func _show_random_dialogue() -> void:
 
 	dialogue_box.visible = false
 	is_dialogue_showing = false
+	
+func _grant_daily_seeds() -> void:
+	for i in DAILY_FREE_SEED_COUNT:
+		var pick: String = DAILY_FREE_SEED_POOL[randi() % DAILY_FREE_SEED_POOL.size()]
+		FarmStand.add_seed(pick, 1)
 
+func _show_shop_closed() -> void:
+	shop_closed.visible = true
+	shop_closed.text = ""
 
+	for i in shop_closed_text.length():
+		shop_closed.text += shop_closed_text[i]
+		await get_tree().create_timer(TYPEWRITER_SPEED).timeout
+
+	await get_tree().create_timer(SHOP_CLOSED_HOLD_TIME).timeout
+
+	shop_closed.visible = false
+	shop_closed.text = ""
+	
 func _on_close_pressed() -> void:
 	get_tree().quit() ## mainmenu later
 
