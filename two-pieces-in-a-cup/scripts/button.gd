@@ -8,6 +8,7 @@ extends TextureButton
 @export var equipped_color := Color(0.55, 0.55, 0.55)
 
 @onready var coin_label: Label = $coin_label
+@onready var buy_sound: AudioStreamPlayer = $"../../../../buy_sound"
 
 var owned := false
 var equipped := false
@@ -36,9 +37,10 @@ func _try_purchase() -> void:
 		owned = true
 		equipped = true
 		coin_label.text = "Equipped"
+		buy_sound.play()
 		modulate = equipped_color
 		Wardrobe.equip(item_type, dress_texture, self)
-	# else: not enough coins — could flash red here later
+	
 
 func _toggle_equip() -> void:
 	equipped = !equipped

@@ -11,9 +11,15 @@ config_version=5
 [application]
 
 config/name="two pieces in a cup"
-run/main_scene="uid://6582qs577f6a"
+run/main_scene="uid://bqj0vrnuxc43u"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+boot_splash/bg_color=Color(0.08468998, 0.08468992, 0.08468989, 1)
+boot_splash/image="uid://blhai7nolxaix"
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://cunpvtvxxhktv"
 
 [autoload]
 

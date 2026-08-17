@@ -7,6 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://dy3621ygkjfxx" path="res://sprites/menu.png" id="5_8ln24"]
 [ext_resource type="Texture2D" uid="uid://cc8jl3esu5uj5" path="res://sprites/title.png" id="5_rtw2f"]
 [ext_resource type="AudioStream" uid="uid://bjodrosc4p8ww" path="res://music/audiocopper-sunny-urban-576831.mp3" id="7_oa1go"]
+[ext_resource type="AudioStream" uid="uid://ba1mpxqmxbwpw" path="res://sounds/dragon-studio-light-switch-on-382714.mp3" id="8_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://ccsmeh6sjnsmg" path="res://sprites/speaker.png" id="9_5dd4i"]
+[ext_resource type="Texture2D" uid="uid://cdkr41t8lircq" path="res://sprites/music.png" id="10_lgwnu"]
+[ext_resource type="Script" uid="uid://bfn2anwn7jlmx" path="res://scripts/sound_control.gd" id="11_lgwnu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3pdg7"]
 shader = ExtResource("2_wu84c")
@@ -35,6 +39,13 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.2784314, 0.15294118, 0.18431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_flqon"]
+bg_color = Color(0.15294118, 0.078431375, 0.11372549, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="MainMenu" type="Node2D" unique_id=2017441948]
 script = ExtResource("1_ekxnf")
@@ -126,6 +137,50 @@ stream = ExtResource("7_oa1go")
 volume_db = -4.0
 autoplay = true
 bus = &"Music"
+
+[node name="click" type="AudioStreamPlayer" parent="." unique_id=1931261053]
+stream = ExtResource("8_tbmy8")
+volume_db = 4.0
+pitch_scale = 2.5
+bus = &"Sfx"
+
+[node name="sfx" type="TextureRect" parent="." unique_id=322271683]
+offset_left = 534.0
+offset_top = 218.0
+offset_right = 574.0
+offset_bottom = 258.0
+texture = ExtResource("9_5dd4i")
+expand_mode = 1
+
+[node name="music2" type="TextureRect" parent="." unique_id=620693958]
+offset_left = 586.0
+offset_top = 220.0
+offset_right = 628.0
+offset_bottom = 262.0
+texture = ExtResource("10_lgwnu")
+expand_mode = 1
+
+[node name="Sfx" type="VSlider" parent="." unique_id=1033799862]
+offset_left = 541.0
+offset_top = 144.0
+offset_right = 557.0
+offset_bottom = 216.0
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_flqon")
+max_value = 1.0
+step = 0.001
+script = ExtResource("11_lgwnu")
+bus_name = "Sfx"
+
+[node name="Music" type="VSlider" parent="." unique_id=786432527]
+offset_left = 597.0
+offset_top = 144.0
+offset_right = 613.0
+offset_bottom = 216.0
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_flqon")
+max_value = 1.0
+step = 0.001
+script = ExtResource("11_lgwnu")
+bus_name = "Music"
 
 [connection signal="pressed" from="Control/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Control/Turorial" to="." method="_on_turorial_pressed"]

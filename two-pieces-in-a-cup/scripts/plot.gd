@@ -7,6 +7,9 @@ enum State { EMPTY, SEEDED, WATERED, GROWN }
 var state: State = State.EMPTY
 var plant_type: String = ""
 var border: TextureRect
+@onready var plant_sound: AudioStreamPlayer = $"../../../plant"
+@onready var water_sound: AudioStreamPlayer = $"../../../water"
+@onready var cutting_sound: AudioStreamPlayer = $"../../../cutting_sound"
 
 func _ready() -> void:
 	add_to_group("plots")
@@ -66,12 +69,14 @@ func plant_seed(type_name: String) -> void:
 	plant_type = type_name
 	state = State.SEEDED
 	seeded.visible = true
+	plant_sound.play()
 	watered.visible = false
 	plant.visible = false
 
 func water() -> void:
 	if state == State.SEEDED:
 		state = State.WATERED
+		water_sound.play()
 		watered.visible = true
 		seeded.visible = false
 
@@ -91,6 +96,7 @@ func _on_plant_gui_input(event: InputEvent) -> void:
 func _harvest() -> void:
 	FarmStand.add_harvest(plant_type, 1)
 	harvested.emit(plant_type)
+	cutting_sound.play()
 	state = State.EMPTY
 	plant_type = ""
 	plant.visible = false

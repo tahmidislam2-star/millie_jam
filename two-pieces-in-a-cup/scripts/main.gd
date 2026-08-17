@@ -56,6 +56,9 @@ const CUSTOMER_SCENE := preload("res://scenes/customer.tscn")
 @onready var blend: AudioStreamPlayer = $shop/blender/blend
 @onready var serve_sound: AudioStreamPlayer = $shop/glass/serve_sound
 @onready var throw_sound: AudioStreamPlayer = $shop/glass/throw_sound
+@onready var light_sound: AudioStreamPlayer = $bedroom/light
+@onready var cat_meow: AudioStreamPlayer = $bedroom/cat_meow
+@onready var click_sound: AudioStreamPlayer = $CanvasLayer/click
 
 var dialogue_lines: Array[String] = [
 	"You remind me of myself when I was younger.",
@@ -114,6 +117,7 @@ const DAILY_FREE_SEED_COUNT := 4
 
 func _ready() -> void:
 	#DrinkStand.reset_state()
+	Wardrobe.coins= 300
 	slot_sprites = {"dress": dress, "glass": glass, "hat": hat}
 	Wardrobe.item_equipped.connect(_on_item_equipped)
 	Wardrobe.item_unequipped.connect(_on_item_unequipped)
@@ -288,7 +292,7 @@ func _on_bed_pressed() -> void:
 	var fade_in_millie := create_tween()
 	fade_in_millie.tween_property(millie, "modulate:a", 1.0, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	await fade_in_millie.finished
-
+	light_sound.play()
 	blackout.visible = true
 	blackout.modulate.a = 0.0
 	var fade_in := create_tween()
@@ -414,9 +418,13 @@ func _on_close_pressed() -> void:
 func _on_petted() -> void:
 	if is_sleeping:
 		return
+
 	heart.visible = true
 	heart_animation.play("pat_heart")
 
+	if not cat_meow.playing:
+		cat_meow.play()
+		
 func _on_pet_stopped() -> void:
 	heart_animation.stop()
 	heart.visible = false
@@ -426,9 +434,9 @@ func _on_yes_pressed() -> void:
 	get_tree().paused = false
 	yes.disabled = true
 	SceneTransition.change_scene("res://scenes/main_menu.tscn")
-	
+	click_sound.play()
 
 func _on_no_pressed() -> void:
 	get_tree().paused = false
 	pause_menu.visible = false
-	
+	click_sound.play()

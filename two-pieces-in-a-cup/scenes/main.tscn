@@ -185,6 +185,9 @@
 [ext_resource type="Script" uid="uid://c26rgcqmion4e" path="res://scripts/waterpot.gd" id="120_m4o51"]
 [ext_resource type="Texture2D" uid="uid://c3a5kld75wsyu" path="res://sprites/water-Sheet.png" id="124_jp61a"]
 [ext_resource type="Script" uid="uid://bwes0os1bmktl" path="res://scripts/seeds_buy.gd" id="126_esrwe"]
+[ext_resource type="AudioStream" uid="uid://dtmblux6c5bwr" path="res://sounds/universfield-coin-drop-229314.mp3" id="126_skhuf"]
+[ext_resource type="AudioStream" uid="uid://ba1mpxqmxbwpw" path="res://sounds/dragon-studio-light-switch-on-382714.mp3" id="127_gq2if"]
+[ext_resource type="AudioStream" uid="uid://dallflj82j1we" path="res://sounds/soundreality-cat-meow-fx-461188.mp3" id="128_lwxg6"]
 [ext_resource type="AudioStream" uid="uid://b3covafvkdww7" path="res://sounds/floraphonic-casual-click-pop-ui-3-262120.mp3" id="149_avkep"]
 [ext_resource type="AudioStream" uid="uid://wg43oynbeptt" path="res://sounds/djartmusic-snowball-throw-hit_3-278173.mp3" id="150_sxhm0"]
 [ext_resource type="AudioStream" uid="uid://dbugnsnxo4xp1" path="res://sounds/floraphonic-minimal-pop-click-ui-8-198308.mp3" id="154_j842w"]
@@ -193,6 +196,9 @@
 [ext_resource type="AudioStream" uid="uid://cbtdyijlke1pu" path="res://sounds/freesoundeffects-button-click-289742.mp3" id="184_m2f0f"]
 [ext_resource type="AudioStream" uid="uid://c5rf3y3xe2yjm" path="res://music/alex-morgan-chillhop-jazz-coffee-shop-552792.mp3" id="185_og54j"]
 [ext_resource type="AudioStream" uid="uid://dk3rskj42gen6" path="res://sounds/dragon-studio-mouse-click-405459.mp3" id="186_54fa5"]
+[ext_resource type="AudioStream" uid="uid://8o2trjsad2ri" path="res://sounds/u_xjrmmgxfru-hit-plant-01-266293.mp3" id="190_y5dkp"]
+[ext_resource type="AudioStream" uid="uid://do60h210qv5ps" path="res://sounds/freesound_community-water-splash-80537.mp3" id="191_skhuf"]
+[ext_resource type="AudioStream" uid="uid://byysp6qpb1vit" path="res://sounds/freesound_community-scissors-cutting-paper-1-101193.mp3" id="195_2b86i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4o5cp"]
 bg_color = Color(0.2784314, 0.15294118, 0.18431373, 1)
@@ -669,6 +675,12 @@ text = "NO"
 stream = ExtResource("27_404go")
 volume_db = -2.0
 pitch_scale = 1.1
+bus = &"Sfx"
+
+[node name="click" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=1917391067]
+stream = ExtResource("127_gq2if")
+volume_db = 4.0
+pitch_scale = 2.5
 bus = &"Sfx"
 
 [node name="bedroom" type="Node2D" parent="." unique_id=268131174]
@@ -1947,6 +1959,20 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_xrivr")
 [node name="heart_animation" type="AnimationPlayer" parent="bedroom" unique_id=717559201]
 libraries/ = SubResource("AnimationLibrary_ow8of")
 
+[node name="buy_sound" type="AudioStreamPlayer" parent="bedroom" unique_id=1901907629]
+stream = ExtResource("126_skhuf")
+bus = &"Sfx"
+
+[node name="light" type="AudioStreamPlayer" parent="bedroom" unique_id=2133579144]
+stream = ExtResource("127_gq2if")
+bus = &"Sfx"
+
+[node name="cat_meow" type="AudioStreamPlayer" parent="bedroom" unique_id=1070197344]
+stream = ExtResource("128_lwxg6")
+volume_db = -4.0
+pitch_scale = 1.25
+bus = &"Sfx"
+
 [node name="shop" type="Node2D" parent="." unique_id=1270991943]
 
 [node name="backgrounds_shop" type="Control" parent="shop" unique_id=1735254804]
@@ -3026,6 +3052,22 @@ position = Vector2(1261, 325)
 stream = ExtResource("184_m2f0f")
 volume_db = -2.0
 pitch_scale = 1.1
+bus = &"Sfx"
+
+[node name="plant" type="AudioStreamPlayer" parent="farm" unique_id=761865453]
+stream = ExtResource("190_y5dkp")
+volume_db = -2.0
+pitch_scale = 1.1
+bus = &"Sfx"
+
+[node name="water" type="AudioStreamPlayer" parent="farm" unique_id=600786921]
+stream = ExtResource("191_skhuf")
+pitch_scale = 1.5
+bus = &"Sfx"
+
+[node name="cutting_sound" type="AudioStreamPlayer" parent="farm" unique_id=1110736295]
+stream = ExtResource("195_2b86i")
+pitch_scale = 0.9
 bus = &"Sfx"
 
 [node name="seed_shop" type="Node2D" parent="." unique_id=1947468394]
