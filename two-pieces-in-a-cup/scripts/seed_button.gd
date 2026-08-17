@@ -6,6 +6,7 @@ extends TextureButton
 @export var normal_color := Color.WHITE
 @export var hover_color := Color(1.2, 1.2, 1.2)
 @onready var amount_label: Label = $amount
+@onready var click: AudioStreamPlayer = $"../../click"
 
 var dragging := false
 var drag_icon: TextureRect = null
@@ -26,6 +27,7 @@ func _on_button_down() -> void:
 	if not FarmStand.has_seed(plant_name):
 		return
 	dragging = true
+	click.play()
 	drag_icon = TextureRect.new()
 	drag_icon.texture = FarmStand.seed_icon_texture
 	drag_icon.size = Vector2(48, 48)   

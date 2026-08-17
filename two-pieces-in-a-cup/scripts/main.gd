@@ -50,6 +50,12 @@ const CUSTOMER_SCENE := preload("res://scenes/customer.tscn")
 @onready var dialogue_box: Panel = $"seed_shop/Dialogue Box"
 @onready var label: Label = $"seed_shop/Dialogue Box/Label"
 @onready var shop_closed: Label = $shop/shop_closed
+@onready var pause_menu: Panel = $CanvasLayer/pause_menu
+@onready var yes: Button = $CanvasLayer/pause_menu/Yes
+@onready var slide: AudioStreamPlayer = $CanvasLayer/slide
+@onready var blend: AudioStreamPlayer = $shop/blender/blend
+@onready var serve_sound: AudioStreamPlayer = $shop/glass/serve_sound
+@onready var throw_sound: AudioStreamPlayer = $shop/glass/throw_sound
 
 var dialogue_lines: Array[String] = [
 	"You remind me of myself when I was younger.",
@@ -91,6 +97,7 @@ var current_customer: Node2D = null
 var current_day := 1
 var current_scene_index := 0
 var is_sleeping := false
+var is_moving := false
 const SCENE_BASE_X := 320
 const SCENE_Y := 180
 const SCENE_SPACING := 640
@@ -106,6 +113,7 @@ const DAILY_FREE_SEED_COUNT := 4
 @onready var right_bottom: Marker2D = $farm/right_bottom
 
 func _ready() -> void:
+	#DrinkStand.reset_state()
 	slot_sprites = {"dress": dress, "glass": glass, "hat": hat}
 	Wardrobe.item_equipped.connect(_on_item_equipped)
 	Wardrobe.item_unequipped.connect(_on_item_unequipped)
@@ -138,8 +146,8 @@ func _ready() -> void:
 	shop_closed_text = shop_closed.text
 	shop_closed.visible = false
 	shop_closed.text = ""
-	print("FarmStand seeds: ", FarmStand.seeds)
-		
+
+	
 func _on_coins_changed(new_amount: int) -> void:
 	coin_label.text = str(new_amount)
 
@@ -154,21 +162,25 @@ func _on_item_unequipped(item_type: String) -> void:
 		slot_sprites[item_type].visible = false
 
 func _on_cross_button_pressed() -> void:
+	slide.play()
 	dresses_container.visible = false
 	hats_container.visible = false
 	glasses_container.visible = false
 
 func _on_hatbutton_pressed() -> void:
+	slide.play()
 	dresses_container.visible = false
 	hats_container.visible = true
 	glasses_container.visible = false
 
 func _on_glassesbutton_pressed() -> void:
+	slide.play()
 	dresses_container.visible = false
 	hats_container.visible = false
 	glasses_container.visible = true
 
 func _on_dressbutton_pressed() -> void:
+	slide.play()
 	dresses_container.visible = true
 	hats_container.visible = false
 	glasses_container.visible = false
@@ -180,8 +192,10 @@ func _on_blender_button_pressed() -> void:
 	is_blending = true
 	blender_button.disabled = true
 	animation_player.play("on")
+	blend.play()
 	await animation_player.animation_finished
 	animation_player.play("default")
+	blend.stop()
 	current_drink = DrinkStand.get_blended_drink()
 	DrinkStand.clear_blender()
 	drink_glass.visible = true
@@ -190,14 +204,14 @@ func _on_blender_button_pressed() -> void:
 
 
 func _on_throw_pressed() -> void:
+	throw_sound.play()
 	current_drink = {}
 	drink_glass.visible = false
 
 func _on_serve_pressed() -> void:
 	if current_customer == null or current_drink.is_empty():
 		return
-	print("Target order: ", DrinkStand.current_order)
-	print("Made drink: ", current_drink)
+	serve_sound.play()
 	var satisfied = DrinkStand.check_drink_matches(current_drink)
 	if satisfied:
 		Wardrobe.add_coins(serve_reward)
@@ -334,19 +348,24 @@ func _on_next_pressed() -> void:
 	if is_sleeping or current_scene_index >= MAX_SCENE_INDEX:
 		return
 	current_scene_index += 1
+	slide.play()
 	_move_camera_to_scene(current_scene_index)
-
+	is_moving = false
+	
 func _on_prev_pressed() -> void:
 	if is_sleeping or current_scene_index <= 0:
 		return
 	current_scene_index -= 1
+	slide.play()
 	_move_camera_to_scene(current_scene_index)
+	is_moving = false
 	
 func _move_camera_to_scene(index: int) -> void:
 	var target_x := SCENE_BASE_X + (SCENE_SPACING * index)
 	var target_pos := Vector2(target_x, SCENE_Y)
 	create_tween().tween_property(camera_2d, "position", target_pos, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-
+	is_moving = true
+	
 func _on_seed_purchased() -> void:
 	if is_dialogue_showing:
 		return
@@ -386,8 +405,12 @@ func _show_shop_closed() -> void:
 	shop_closed.text = ""
 	
 func _on_close_pressed() -> void:
-	get_tree().quit() ## mainmenu later
-
+	if is_moving: 
+		return
+		
+	get_tree().paused = true
+	pause_menu.visible = true
+	
 func _on_petted() -> void:
 	if is_sleeping:
 		return
@@ -397,3 +420,15 @@ func _on_petted() -> void:
 func _on_pet_stopped() -> void:
 	heart_animation.stop()
 	heart.visible = false
+
+
+func _on_yes_pressed() -> void:
+	get_tree().paused = false
+	yes.disabled = true
+	SceneTransition.change_scene("res://scenes/main_menu.tscn")
+	
+
+func _on_no_pressed() -> void:
+	get_tree().paused = false
+	pause_menu.visible = false
+	

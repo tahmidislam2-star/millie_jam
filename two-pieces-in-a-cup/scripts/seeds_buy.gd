@@ -4,6 +4,7 @@ extends TextureButton
 @export var price: int = 20
 
 @onready var price_label: Label = $Label
+@onready var buy: AudioStreamPlayer = $"../buy"
 
 var border: TextureRect
 
@@ -57,4 +58,5 @@ func _on_pressed() -> void:
 	if not Wardrobe.spend(price):
 		return
 	FarmStand.add_seed(plant_name, 1)
+	buy.play()
 	FarmStand.seed_purchased.emit()

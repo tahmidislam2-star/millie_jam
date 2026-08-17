@@ -8,6 +8,7 @@ extends TextureButton
 @export var normal_color := Color.WHITE
 @export var hover_color := Color(1.2, 1.2, 1.2)
 @onready var amount_label: Label = $amount
+@onready var select: AudioStreamPlayer = $"../../select"
 
 func _ready() -> void:
 	DrinkStand.register_ingredient(ingredient_name, sweetness, coolness, fizziness, starting_amount, icon_texture)
@@ -31,6 +32,7 @@ func _on_pressed() -> void:
 		return
 	DrinkStand.use_ingredient(ingredient_name)
 	DrinkStand.add_to_blender(ingredient_name)
+	select.play()
 	_refresh()
 
 func _on_mouse_entered() -> void:

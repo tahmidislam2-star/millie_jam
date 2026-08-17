@@ -1,6 +1,7 @@
 extends TextureButton
 @export var slot_index: int = 0
 var border: TextureRect
+@onready var deselect: AudioStreamPlayer = $"../../../deselect"
 
 func _ready() -> void:
 	DrinkStand.blender_updated.connect(_refresh)
@@ -65,4 +66,5 @@ func _on_pressed() -> void:
 	if entry == null:
 		return
 	var ing_name = DrinkStand.remove_from_blender(slot_index)
+	deselect.play()
 	DrinkStand.return_ingredient(ing_name)

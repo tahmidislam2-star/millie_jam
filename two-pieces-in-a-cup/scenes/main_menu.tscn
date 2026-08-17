@@ -2,9 +2,18 @@
 
 [ext_resource type="Script" uid="uid://scpqmo4c5eui" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="FontFile" uid="uid://uv6et6abcaiv" path="res://Born2bSportyFS.otf" id="1_l6cm7"]
+[ext_resource type="Shader" uid="uid://udd3ni4eyhe3" path="res://scripts/scroll.gdshader" id="2_wu84c"]
+[ext_resource type="Texture2D" uid="uid://dwku1ew55ei5s" path="res://sprites/aseprite.png" id="3_wu84c"]
+[ext_resource type="Texture2D" uid="uid://dy3621ygkjfxx" path="res://sprites/menu.png" id="5_8ln24"]
+[ext_resource type="Texture2D" uid="uid://cc8jl3esu5uj5" path="res://sprites/title.png" id="5_rtw2f"]
+[ext_resource type="AudioStream" uid="uid://bjodrosc4p8ww" path="res://music/audiocopper-sunny-urban-576831.mp3" id="7_oa1go"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3pdg7"]
+shader = ExtResource("2_wu84c")
+shader_parameter/speed = 0.4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekxnf"]
-bg_color = Color(0.45882353, 0.5254902, 0.44705883, 1)
+bg_color = Color(0.9764706, 0.7607843, 0.5294118, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -12,7 +21,7 @@ border_width_bottom = 2
 border_color = Color(0.2784314, 0.15294118, 0.18431373, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqqt6"]
-bg_color = Color(0.34117648, 0.39215687, 0.43137255, 1)
+bg_color = Color(0.654902, 0.44705883, 0.24705882, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -20,7 +29,7 @@ border_width_bottom = 2
 border_color = Color(0.2784314, 0.15294118, 0.18431373, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
-bg_color = Color(0.38431373, 0.5882353, 0.35686275, 1)
+bg_color = Color(0.9764706, 0.89411765, 0.7921569, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -30,11 +39,41 @@ border_color = Color(0.2784314, 0.15294118, 0.18431373, 1)
 [node name="MainMenu" type="Node2D" unique_id=2017441948]
 script = ExtResource("1_ekxnf")
 
+[node name="bg" type="TextureRect" parent="." unique_id=87529636]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_3pdg7")
+offset_right = 639.0
+offset_bottom = 360.0
+texture = ExtResource("3_wu84c")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1693531333]
+offset_top = 45.0
+offset_right = 640.0
+offset_bottom = 405.0
+texture = ExtResource("5_8ln24")
+
 [node name="Control" type="Control" parent="." unique_id=1860474447]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
 offset_bottom = 360.0
+
+[node name="TextureRect2" type="TextureRect" parent="Control" unique_id=62828258]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -149.0
+offset_top = -139.0
+offset_right = 150.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_rtw2f")
+stretch_mode = 4
 
 [node name="start" type="Button" parent="Control" unique_id=22694096]
 layout_mode = 1
@@ -43,17 +82,50 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -29.0
-offset_top = -13.0
-offset_right = 29.0
-offset_bottom = 13.0
+offset_left = -42.5
+offset_top = -17.5
+offset_right = 42.5
+offset_bottom = 17.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.2784314, 0.15294118, 0.18431373, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wu84c")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_bqqt6")
 text = "Start"
 
+[node name="Turorial" type="Button" parent="Control" unique_id=971154220]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = 24.0
+offset_right = 43.0
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.2784314, 0.15294118, 0.18431373, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wu84c")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_bqqt6")
+text = "Tutorial"
+
+[node name="music" type="AudioStreamPlayer" parent="." unique_id=706254186]
+stream = ExtResource("7_oa1go")
+volume_db = -4.0
+autoplay = true
+bus = &"Music"
+
 [connection signal="pressed" from="Control/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Control/Turorial" to="." method="_on_turorial_pressed"]

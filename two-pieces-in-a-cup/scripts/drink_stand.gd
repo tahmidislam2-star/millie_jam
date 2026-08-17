@@ -29,6 +29,7 @@ func add_ingredient_stock(ing_name: String, amount: int = 1) -> void:
 	
 func return_ingredient(ing_name: String) -> void:
 	inventory[ing_name] = get_amount(ing_name) + 1
+	inventory_changed.emit(ing_name)
 
 func is_blender_full() -> bool:
 	return blender_slots[0] != null and blender_slots[1] != null
@@ -90,3 +91,9 @@ func check_drink_matches(drink: Dictionary) -> bool:
 	return drink.sweetness >= current_order.sweetness \
 		and drink.coolness >= current_order.coolness \
 		and drink.fizziness >= current_order.fizziness
+
+func reset_state() -> void:
+	inventory.clear()
+	blender_slots = [null, null]
+	current_order.clear()
+	blender_updated.emit()
