@@ -5,6 +5,7 @@ extends TextureButton
 
 @onready var price_label: Label = $Label
 @onready var buy: AudioStreamPlayer = $"../buy"
+@export var hover_message : String
 
 var border: TextureRect
 
@@ -50,10 +51,13 @@ void fragment() {
 
 func _on_mouse_entered() -> void:
 	border.visible = true
-
+	if hover_message != "":
+		HoverBus.hover_started.emit(hover_message)
+		
 func _on_mouse_exited() -> void:
 	border.visible = false
-
+	HoverBus.hover_ended.emit()
+	
 func _on_pressed() -> void:
 	if not Wardrobe.spend(price):
 		return

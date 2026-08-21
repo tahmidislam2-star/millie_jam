@@ -47,9 +47,12 @@
 [ext_resource type="Texture2D" uid="uid://bdv5nbdla1cnj" path="res://sprites/blender_button.png" id="45_isn07"]
 [ext_resource type="Texture2D" uid="uid://mh2nrl3vdvss" path="res://sprites/blender_button_pressed.png" id="46_e3f4d"]
 [ext_resource type="Texture2D" uid="uid://bb7wsx864di6g" path="res://sprites/blender_button_hover.png" id="47_ydawo"]
+[ext_resource type="Texture2D" uid="uid://qgrpphwil7ih" path="res://sprites/tutorial.png" id="48_nd7mk"]
 [ext_resource type="Texture2D" uid="uid://b8sfgi8qpa5n6" path="res://sprites/scene3.png" id="48_o8yup"]
+[ext_resource type="Texture2D" uid="uid://hp6rtfmutev2" path="res://sprites/tutorial_pressed.png" id="49_ekcgd"]
 [ext_resource type="Texture2D" uid="uid://chtppqh1ysuh3" path="res://sprites/plot.png" id="49_vh8v2"]
 [ext_resource type="Script" uid="uid://cqpphlau6fjw" path="res://scripts/tut_plot.gd" id="50_mib55"]
+[ext_resource type="Texture2D" uid="uid://b4odumsla41af" path="res://sprites/tutorial_hover.png" id="50_wxtpk"]
 [ext_resource type="Texture2D" uid="uid://hy7o8k4ykuey" path="res://sprites/plant_seeded.png" id="51_dvvdn"]
 [ext_resource type="Texture2D" uid="uid://cugqjy7bparmr" path="res://sprites/plant_watered.png" id="52_yqf35"]
 [ext_resource type="Texture2D" uid="uid://oxlc7r37jec" path="res://plant_buttons/lemon_button.png" id="53_nvg15"]
@@ -70,7 +73,9 @@
 [ext_resource type="Texture2D" uid="uid://bkexd3sawtfdm" path="res://sprites/sugarcane.png" id="68_ucaqj"]
 [ext_resource type="Texture2D" uid="uid://chdmi1csm26gd" path="res://sprites/shop_scene.png" id="69_ux1yy"]
 [ext_resource type="Texture2D" uid="uid://bsn5t5n2c5jup" path="res://sprites/mint_tree.png" id="70_0i4gj"]
+[ext_resource type="Texture2D" uid="uid://dmjnncrti07mm" path="res://sprites/sugarcane_hover.png" id="70_dskhb"]
 [ext_resource type="Texture2D" uid="uid://dvtwpjynbl5j2" path="res://sprites/cucumber_tree.png" id="71_10s0o"]
+[ext_resource type="Texture2D" uid="uid://cbv3qly6qugsv" path="res://sprites/lemon_tree_hover.png" id="71_yvunf"]
 [ext_resource type="Texture2D" uid="uid://h2umd32m1wkc" path="res://sprites/ginger_tree.png" id="72_qew5l"]
 [ext_resource type="Texture2D" uid="uid://cupqpwrlyhw6c" path="res://sprites/strawberry_tree.png" id="73_poneu"]
 [ext_resource type="Texture2D" uid="uid://cqyfcfvkpcrge" path="res://sprites/hibiscus_tree.png" id="74_nv86r"]
@@ -813,7 +818,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_clox6")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_mjxwt")
 theme_override_styles/hover = SubResource("StyleBoxFlat_u2oec")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_kshmo")
-text = "Throw"
+text = "Trash"
 
 [node name="serve" type="Button" parent="shop/glass" unique_id=1830185340]
 offset_left = 873.0
@@ -896,6 +901,19 @@ theme_override_colors/font_color = Color(0.87058824, 0.85882354, 0.8235294, 1)
 theme_override_fonts/font = ExtResource("6_nd7mk")
 theme_override_font_sizes/font_size = 18
 text = "Shop Closed for Today."
+
+[node name="Hint" type="TextureButton" parent="shop" unique_id=1519682003]
+process_mode = 1
+offset_left = 1236.0
+offset_top = 345.0
+offset_right = 1249.0
+offset_bottom = 358.0
+texture_normal = ExtResource("48_nd7mk")
+texture_pressed = ExtResource("49_ekcgd")
+texture_hover = ExtResource("50_wxtpk")
+texture_disabled = ExtResource("49_ekcgd")
+ignore_texture_size = true
+stretch_mode = 4
 
 [node name="farm" type="Node2D" parent="." unique_id=1576825841]
 position = Vector2(640, 0)
@@ -1529,6 +1547,7 @@ offset_top = 72.0
 offset_right = 831.0
 offset_bottom = 168.0
 texture_normal = ExtResource("67_usiup")
+texture_hover = ExtResource("71_yvunf")
 
 [node name="sugarcane_tree" type="TextureButton" parent="farm" unique_id=325222147]
 offset_left = 848.0
@@ -1536,6 +1555,7 @@ offset_top = 151.0
 offset_right = 912.0
 offset_bottom = 247.0
 texture_normal = ExtResource("68_ucaqj")
+texture_hover = ExtResource("70_dskhb")
 
 [node name="seed_shop" type="Node2D" parent="." unique_id=536450850]
 position = Vector2(1280, 0)
@@ -1654,6 +1674,7 @@ offset_top = 36.0
 offset_right = 1074.0
 offset_bottom = 132.0
 texture_normal = ExtResource("67_usiup")
+texture_hover = ExtResource("71_yvunf")
 ignore_texture_size = true
 
 [node name="coin" type="TextureRect" parent="seed_shop/lemon" unique_id=1280350686]

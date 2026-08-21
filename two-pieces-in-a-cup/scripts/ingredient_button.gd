@@ -9,6 +9,7 @@ extends TextureButton
 @export var hover_color := Color(1.2, 1.2, 1.2)
 @onready var amount_label: Label = $amount
 @onready var select: AudioStreamPlayer = $"../../select"
+@export var hover_message : String
 
 func _ready() -> void:
 	DrinkStand.register_ingredient(ingredient_name, sweetness, coolness, fizziness, starting_amount, icon_texture)
@@ -37,6 +38,9 @@ func _on_pressed() -> void:
 
 func _on_mouse_entered() -> void:
 	create_tween().tween_property(self, "modulate", hover_color, 0.08)
+	if hover_message != "":
+		HoverBus.hover_started.emit(hover_message)
 
 func _on_mouse_exited() -> void:
 	create_tween().tween_property(self, "modulate", normal_color, 0.08)
+	HoverBus.hover_ended.emit()

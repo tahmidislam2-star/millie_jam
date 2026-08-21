@@ -28,13 +28,13 @@ DrinkStand="*uid://bi503u2wnailc"
 FarmStand="*uid://ohtfx7mu34c8"
 WorldBounds="*uid://272wlt61aqka"
 SceneTransition="*uid://ka811xtkmv3n"
+HoverBus="*uid://ep0byqdghuc0"
 
 [display]
 
 window/size/viewport_width=640
 window/size/viewport_height=360
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 mouse_cursor/custom_image="uid://d2208576e8emp"
 
 [physics]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://scpqmo4c5eui" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="FontFile" uid="uid://uv6et6abcaiv" path="res://Born2bSportyFS.otf" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://d2208576e8emp" path="res://sprites/cursor.png" id="2_flqon"]
 [ext_resource type="Shader" uid="uid://udd3ni4eyhe3" path="res://scripts/scroll.gdshader" id="2_wu84c"]
 [ext_resource type="Texture2D" uid="uid://dwku1ew55ei5s" path="res://sprites/aseprite.png" id="3_wu84c"]
 [ext_resource type="Texture2D" uid="uid://dy3621ygkjfxx" path="res://sprites/menu.png" id="5_8ln24"]
@@ -49,6 +50,7 @@ corner_radius_bottom_left = 4
 
 [node name="MainMenu" type="Node2D" unique_id=2017441948]
 script = ExtResource("1_ekxnf")
+default_cursor = ExtResource("2_flqon")
 
 [node name="bg" type="TextureRect" parent="." unique_id=87529636]
 texture_repeat = 2

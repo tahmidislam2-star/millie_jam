@@ -61,39 +61,83 @@ func clear_blender() -> void:
 	blender_slots = [null, null]
 	blender_updated.emit()
 
-func generate_customer_order() -> Dictionary:
-	var names = ingredients.keys()
-	var a = ingredients[names.pick_random()]
-	var b = ingredients[names.pick_random()]
+func generate_customer_order(day: int = 1) -> Dictionary:
+	var keys := ["sweetness", "coolness", "fizziness"]
+	keys.shuffle()
+	var stats := {}
 
-	var stats = {
-		"sweetness": min(10, a.sweetness + b.sweetness),
-		"coolness": min(10, a.coolness + b.coolness),
-		"fizziness": min(10, a.fizziness + b.fizziness),
-	}
+	if day <= 4:
+		# Tier 1: one dominant stat, everything else near-zero
+		stats[keys[0]] = randi_range(7, 9)
+		stats[keys[1]] = randi_range(1, 2)
+		stats[keys[2]] = randi_range(1, 2)
 
-	var high_keys = []
-	for key in stats.keys():
-		if stats[key] > 4:
-			high_keys.append(key)
+	elif day <= 8:
+		# Tier 2: one high, one medium, one low
+		stats[keys[0]] = randi_range(7, 9)
+		stats[keys[1]] = randi_range(4, 6)
+		stats[keys[2]] = randi_range(1, 3)
 
-	if high_keys.size() >= 2:
-		high_keys.shuffle()
-		var keep = high_keys.slice(0, 2)
+	else:
+		# Tier 3: original logic — two high stats from a random ingredient pair
+		var names = ingredients.keys()
+		var a = ingredients[names.pick_random()]
+		var b = ingredients[names.pick_random()]
+		stats = {
+			"sweetness": min(10, a.sweetness + b.sweetness),
+			"coolness": min(10, a.coolness + b.coolness),
+			"fizziness": min(10, a.fizziness + b.fizziness),
+		}
+		var high_keys = []
 		for key in stats.keys():
-			if not keep.has(key):
-				stats[key] = randi_range(1, 3)
+			if stats[key] > 4:
+				high_keys.append(key)
+		if high_keys.size() >= 2:
+			high_keys.shuffle()
+			var keep = high_keys.slice(0, 2)
+			for key in stats.keys():
+				if not keep.has(key):
+					stats[key] = randi_range(1, 3)
 
 	current_order = stats
 	return current_order
-
+	
 func check_drink_matches(drink: Dictionary) -> bool:
 	return drink.sweetness >= current_order.sweetness \
 		and drink.coolness >= current_order.coolness \
 		and drink.fizziness >= current_order.fizziness
 
 func reset_state() -> void:
-	inventory.clear()
 	blender_slots = [null, null]
 	current_order.clear()
 	blender_updated.emit()
+
+func get_hint_pair(require_stock: bool = true) -> Array:
+	if current_order.is_empty():
+		return []
+
+	var names = ingredients.keys()
+	var best: Array = []
+	var best_score: int = 0
+	var found := false
+
+	for i in range(names.size()):
+		for j in range(i, names.size()):
+			if require_stock and (get_amount(names[i]) <= 0 or (i == j and get_amount(names[i]) < 2) or (i != j and get_amount(names[j]) <= 0)):
+				continue
+
+			var a = ingredients[names[i]]
+			var b = ingredients[names[j]]
+			var sw = a.sweetness + b.sweetness
+			var co = a.coolness + b.coolness
+			var fz = a.fizziness + b.fizziness
+
+			if sw >= current_order.sweetness and co >= current_order.coolness and fz >= current_order.fizziness:
+				var excess = (sw - current_order.sweetness) + (co - current_order.coolness) + (fz - current_order.fizziness)
+
+				if not found or excess < best_score:
+					found = true
+					best_score = excess
+					best = [names[i], names[j]]
+
+	return best

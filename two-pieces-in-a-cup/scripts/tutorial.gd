@@ -63,6 +63,7 @@ var current_scene_index := 0
 @onready var simple_glass: TextureButton = $bedroom/simple_glass
 @onready var glass: Sprite2D = $bedroom/glass
 @onready var bed: TextureButton = $bedroom/bed
+@onready var hint_button: TextureButton = $shop/Hint
 
 
 
@@ -128,6 +129,8 @@ func _lock_all() -> void:
 	simple_glass.disabled = true
 	bed.disabled = true
 	lemon_seed.disabled = true
+	hint_button.disabled = true
+	
 func _say(text: String, hold: float = 1.2) -> void:
 	announcer.text = ""
 	for i in text.length():
@@ -160,7 +163,12 @@ func _run_tutorial() -> void:
 	await _say("There's a customer.")
 	await _say("Looks like he wants a cool sweet drink.")
 
-	await _say("Press the lemon and sugarcane to add them in your blender.", 0.0)
+	await _say("Press the Question mark symbol on the bottom right to reveal a hint.", 0.0)
+	hint_button.disabled = false
+	await hint_button.pressed
+	hint_button.disabled = true
+	await _say("Try mixing Lemon and Sugarcane Together.")
+	
 	lemon.disabled = false
 	sugarcane.disabled = false
 	await _wait_for_blender_full()

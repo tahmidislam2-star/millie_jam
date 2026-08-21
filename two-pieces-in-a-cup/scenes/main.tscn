@@ -188,11 +188,15 @@
 [ext_resource type="AudioStream" uid="uid://dtmblux6c5bwr" path="res://sounds/universfield-coin-drop-229314.mp3" id="126_skhuf"]
 [ext_resource type="AudioStream" uid="uid://ba1mpxqmxbwpw" path="res://sounds/dragon-studio-light-switch-on-382714.mp3" id="127_gq2if"]
 [ext_resource type="AudioStream" uid="uid://dallflj82j1we" path="res://sounds/soundreality-cat-meow-fx-461188.mp3" id="128_lwxg6"]
+[ext_resource type="Texture2D" uid="uid://cecvcoja7qn0h" path="res://sprites/throw.png" id="129_mnra2"]
 [ext_resource type="AudioStream" uid="uid://b3covafvkdww7" path="res://sounds/floraphonic-casual-click-pop-ui-3-262120.mp3" id="149_avkep"]
 [ext_resource type="AudioStream" uid="uid://wg43oynbeptt" path="res://sounds/djartmusic-snowball-throw-hit_3-278173.mp3" id="150_sxhm0"]
 [ext_resource type="AudioStream" uid="uid://dbugnsnxo4xp1" path="res://sounds/floraphonic-minimal-pop-click-ui-8-198308.mp3" id="154_j842w"]
 [ext_resource type="AudioStream" uid="uid://b880k4sc0qjpe" path="res://sounds/sound_garage-blender-2-fx-306164.mp3" id="154_m5a64"]
 [ext_resource type="AudioStream" uid="uid://dk2xd1vp8ymt6" path="res://sounds/soundshelfstudio-ui-radio-deselect-518050.mp3" id="155_m5a64"]
+[ext_resource type="Texture2D" uid="uid://qgrpphwil7ih" path="res://sprites/tutorial.png" id="162_hyoe7"]
+[ext_resource type="Texture2D" uid="uid://hp6rtfmutev2" path="res://sprites/tutorial_pressed.png" id="163_b7yds"]
+[ext_resource type="Texture2D" uid="uid://b4odumsla41af" path="res://sprites/tutorial_hover.png" id="164_mnra2"]
 [ext_resource type="AudioStream" uid="uid://cbtdyijlke1pu" path="res://sounds/freesoundeffects-button-click-289742.mp3" id="184_m2f0f"]
 [ext_resource type="AudioStream" uid="uid://c5rf3y3xe2yjm" path="res://music/alex-morgan-chillhop-jazz-coffee-shop-552792.mp3" id="185_og54j"]
 [ext_resource type="AudioStream" uid="uid://dk3rskj42gen6" path="res://sounds/dragon-studio-mouse-click-405459.mp3" id="186_54fa5"]
@@ -321,6 +325,92 @@ _data = {
 &"RESET": SubResource("Animation_1v8b0"),
 &"pat_heart": SubResource("Animation_683hg")
 }
+
+[sub_resource type="Animation" id="Animation_mnra2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_34ffc"]
+resource_name = "throw"
+length = 0.8
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5eoch"]
+_data = {
+&"RESET": SubResource("Animation_mnra2"),
+&"throw": SubResource("Animation_34ffc")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dl2iq"]
+bg_color = Color(0.46666667, 0.67058825, 0.654902, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2784314, 0.15294118, 0.18431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1nfnm"]
+bg_color = Color(0.32941177, 0.52156866, 0.54901963, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2784314, 0.15294118, 0.18431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mm77e"]
+bg_color = Color(0.53333336, 0.67058825, 0.6745098, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2784314, 0.15294118, 0.18431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2b86i"]
+bg_color = Color(0.9764706, 0.7607843, 0.5294118, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2784314, 0.15294118, 0.18431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hkub5"]
+bg_color = Color(0.654902, 0.44705883, 0.24705882, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2784314, 0.15294118, 0.18431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b6g1r"]
+bg_color = Color(0.9764706, 0.89411765, 0.7921569, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2784314, 0.15294118, 0.18431373, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3pdg7"]
 bg_color = Color(0.9764706, 0.7607843, 0.5294118, 1)
@@ -1975,6 +2065,17 @@ bus = &"Sfx"
 
 [node name="shop" type="Node2D" parent="." unique_id=1270991943]
 
+[node name="Throw" type="Sprite2D" parent="shop" unique_id=1726456105]
+visible = false
+z_index = 1
+position = Vector2(896.00006, 87)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("129_mnra2")
+hframes = 4
+
+[node name="throw_animation" type="AnimationPlayer" parent="shop/Throw" unique_id=1907164494]
+libraries/ = SubResource("AnimationLibrary_5eoch")
+
 [node name="backgrounds_shop" type="Control" parent="shop" unique_id=1735254804]
 layout_mode = 3
 anchors_preset = 0
@@ -2048,6 +2149,7 @@ sweetness = 2
 coolness = 3
 starting_amount = 3
 icon_texture = ExtResource("69_m4lup")
+hover_message = "Lemon"
 
 [node name="amount" type="Label" parent="shop/item list/lemon" unique_id=1050800339]
 layout_mode = 0
@@ -2069,6 +2171,7 @@ ingredient_name = "Sugarcane"
 sweetness = 9
 starting_amount = 3
 icon_texture = ExtResource("71_aiee3")
+hover_message = "Sugarcane"
 
 [node name="amount" type="Label" parent="shop/item list/sugarcane" unique_id=1170748950]
 layout_mode = 0
@@ -2091,6 +2194,7 @@ sweetness = 3
 coolness = 8
 starting_amount = 3
 icon_texture = ExtResource("73_kmcm6")
+hover_message = "Mint"
 
 [node name="amount" type="Label" parent="shop/item list/mint" unique_id=649160713]
 layout_mode = 0
@@ -2112,6 +2216,7 @@ ingredient_name = "Cucumber"
 coolness = 9
 starting_amount = 3
 icon_texture = ExtResource("75_ybi5g")
+hover_message = "Cucumber"
 
 [node name="amount" type="Label" parent="shop/item list/cucumber" unique_id=569537267]
 layout_mode = 0
@@ -2135,6 +2240,7 @@ coolness = 3
 fizziness = 7
 starting_amount = 2
 icon_texture = ExtResource("77_smy15")
+hover_message = "Hibiscus"
 
 [node name="amount" type="Label" parent="shop/item list/hibiscus" unique_id=1200200070]
 layout_mode = 0
@@ -2158,6 +2264,7 @@ coolness = 2
 fizziness = 8
 starting_amount = 2
 icon_texture = ExtResource("79_og54j")
+hover_message = "Ginger"
 
 [node name="amount" type="Label" parent="shop/item list/ginger" unique_id=2112687568]
 layout_mode = 0
@@ -2180,6 +2287,7 @@ sweetness = 7
 coolness = 6
 starting_amount = 0
 icon_texture = ExtResource("81_54fa5")
+hover_message = "Watermelon"
 
 [node name="amount" type="Label" parent="shop/item list/watermelon" unique_id=1571550780]
 layout_mode = 0
@@ -2203,6 +2311,7 @@ coolness = 4
 fizziness = 2
 starting_amount = 0
 icon_texture = ExtResource("83_41mld")
+hover_message = "Strawberry"
 
 [node name="amount" type="Label" parent="shop/item list/strawberry" unique_id=245947124]
 layout_mode = 0
@@ -2220,12 +2329,13 @@ offset_right = 620.0
 offset_bottom = 295.0
 texture_normal = ExtResource("84_j842w")
 script = ExtResource("68_oh722")
-ingredient_name = "Passionfruit"
+ingredient_name = "Blueberry"
 sweetness = 6
 coolness = 5
 fizziness = 8
 starting_amount = 0
 icon_texture = ExtResource("85_m5a64")
+hover_message = "Blueberry"
 
 [node name="amount" type="Label" parent="shop/item list/Passionfruit" unique_id=199607449]
 layout_mode = 0
@@ -2249,6 +2359,7 @@ coolness = 7
 fizziness = 4
 starting_amount = 0
 icon_texture = ExtResource("87_sxhm0")
+hover_message = "Lavender"
 
 [node name="amount" type="Label" parent="shop/item list/lavender" unique_id=1708440918]
 layout_mode = 0
@@ -2269,6 +2380,18 @@ theme_override_fonts/font = ExtResource("18_m4o51")
 theme_override_styles/normal = SubResource("StyleBoxFlat_1vm84")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_wu3dr")
 theme_override_styles/hover = SubResource("StyleBoxFlat_cyx1q")
+text = "Trash"
+
+[node name="throw2" type="Button" parent="shop/glass" unique_id=1826205716]
+offset_left = 997.0
+offset_top = 314.0
+offset_right = 1037.0
+offset_bottom = 336.0
+theme_override_fonts/font = ExtResource("18_m4o51")
+theme_override_font_sizes/font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxFlat_dl2iq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1nfnm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mm77e")
 text = "Throw"
 
 [node name="serve" type="Button" parent="shop/glass" unique_id=909460165]
@@ -2295,6 +2418,35 @@ bus = &"Sfx"
 [node name="throw_sound" type="AudioStreamPlayer" parent="shop/glass" unique_id=1000514774]
 stream = ExtResource("150_sxhm0")
 bus = &"Sfx"
+
+[node name="throw_sound_water" type="AudioStreamPlayer" parent="shop/glass" unique_id=1376586551]
+stream = ExtResource("191_skhuf")
+pitch_scale = 1.5
+bus = &"Sfx"
+
+[node name="skip" type="Button" parent="shop" unique_id=866545702]
+process_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1133.0
+offset_top = 307.0
+offset_right = 1244.0
+offset_bottom = 334.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.2784314, 0.15294118, 0.18431373, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("18_m4o51")
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_2b86i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hkub5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_b6g1r")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_hkub5")
+text = "Skip Customer"
+icon_alignment = 1
 
 [node name="customer_spawn" type="Marker2D" parent="shop" unique_id=1129945082]
 position = Vector2(895, 142)
@@ -2345,6 +2497,7 @@ texture = ExtResource("90_skhuf")
 hframes = 3
 
 [node name="blender_button" type="TextureButton" parent="shop/blender" unique_id=849786974]
+process_mode = 1
 offset_left = 728.0
 offset_top = 276.0
 offset_right = 746.0
@@ -2360,7 +2513,7 @@ libraries/ = SubResource("AnimationLibrary_jbvwl")
 stream = ExtResource("154_m5a64")
 bus = &"Sfx"
 
-[node name="shop_closed" type="Label" parent="shop" unique_id=1222920305]
+[node name="hint_label" type="Label" parent="shop" unique_id=1222920305]
 offset_left = 664.0
 offset_top = -3.0
 offset_right = 826.0
@@ -2381,6 +2534,19 @@ stream = ExtResource("155_m5a64")
 volume_db = 8.0
 autoplay = true
 bus = &"Sfx"
+
+[node name="Hint" type="TextureButton" parent="shop" unique_id=1879330546]
+process_mode = 1
+offset_left = 1236.0
+offset_top = 345.0
+offset_right = 1249.0
+offset_bottom = 358.0
+texture_normal = ExtResource("162_hyoe7")
+texture_pressed = ExtResource("163_b7yds")
+texture_hover = ExtResource("164_mnra2")
+texture_disabled = ExtResource("163_b7yds")
+ignore_texture_size = true
+stretch_mode = 4
 
 [node name="farm" type="Node2D" parent="." unique_id=1949437355]
 position = Vector2(640, 0)
@@ -2804,6 +2970,7 @@ script = ExtResource("100_1hbcg")
 plant_name = "Lemon"
 tree_texture = ExtResource("110_f5chs")
 starting_seeds = 2
+hover_message = "Lemon"
 
 [node name="amount" type="Label" parent="farm/buttons/lemon" unique_id=2137768920]
 layout_mode = 0
@@ -2825,6 +2992,7 @@ script = ExtResource("100_1hbcg")
 plant_name = "Sugarcane"
 tree_texture = ExtResource("107_888ul")
 starting_seeds = 2
+hover_message = "Sugarcane"
 
 [node name="amount" type="Label" parent="farm/buttons/sugarcane" unique_id=32473342]
 layout_mode = 0
@@ -2846,6 +3014,7 @@ script = ExtResource("100_1hbcg")
 plant_name = "Mint"
 tree_texture = ExtResource("108_ga3rw")
 starting_seeds = 2
+hover_message = "Mint"
 
 [node name="amount" type="Label" parent="farm/buttons/mint" unique_id=1843943934]
 layout_mode = 0
@@ -2868,6 +3037,7 @@ script = ExtResource("100_1hbcg")
 plant_name = "Cucumber"
 tree_texture = ExtResource("111_eh25q")
 starting_seeds = 2
+hover_message = "Cucumber"
 
 [node name="amount" type="Label" parent="farm/buttons/cucumber" unique_id=1324109006]
 layout_mode = 0
@@ -2889,6 +3059,7 @@ script = ExtResource("100_1hbcg")
 plant_name = "Ginger"
 tree_texture = ExtResource("109_roort")
 starting_seeds = 2
+hover_message = "Ginger"
 
 [node name="amount" type="Label" parent="farm/buttons/ginger" unique_id=1658042237]
 layout_mode = 0
@@ -2911,6 +3082,7 @@ script = ExtResource("100_1hbcg")
 plant_name = "Hibiscus"
 tree_texture = ExtResource("113_yton5")
 starting_seeds = 2
+hover_message = "Hibiscus"
 
 [node name="amount" type="Label" parent="farm/buttons/hibiscus" unique_id=1642875578]
 layout_mode = 0
@@ -2932,6 +3104,7 @@ script = ExtResource("100_1hbcg")
 plant_name = "Strawberry"
 tree_texture = ExtResource("112_joh2r")
 starting_seeds = 1
+hover_message = "Strawberry"
 
 [node name="amount" type="Label" parent="farm/buttons/strawberry" unique_id=891740819]
 layout_mode = 0
@@ -2954,6 +3127,7 @@ script = ExtResource("100_1hbcg")
 plant_name = "Watermelon"
 tree_texture = ExtResource("114_4ahvx")
 starting_seeds = 1
+hover_message = "Watermelon"
 
 [node name="amount" type="Label" parent="farm/buttons/watermelon" unique_id=266854648]
 layout_mode = 0
@@ -2975,6 +3149,7 @@ script = ExtResource("100_1hbcg")
 plant_name = "Lavender"
 tree_texture = ExtResource("115_2cr71")
 starting_seeds = 0
+hover_message = "Lavender"
 
 [node name="amount" type="Label" parent="farm/buttons/lavender" unique_id=1986839123]
 layout_mode = 0
@@ -2994,9 +3169,10 @@ offset_right = 128.0
 offset_bottom = 320.0
 texture_normal = ExtResource("105_2yqmv")
 script = ExtResource("100_1hbcg")
-plant_name = "Passionfruit"
+plant_name = "Blueberry"
 tree_texture = ExtResource("119_m4o51")
 starting_seeds = 0
+hover_message = "Blueberry"
 
 [node name="amount" type="Label" parent="farm/buttons/passionfruit" unique_id=419965746]
 layout_mode = 0
@@ -3135,6 +3311,7 @@ ignore_texture_size = true
 script = ExtResource("126_esrwe")
 plant_name = "Sugarcane"
 price = 30
+hover_message = "Sugarcane"
 
 [node name="Label" type="Label" parent="seed_shop/sugercane" unique_id=284396982]
 layout_mode = 0
@@ -3166,6 +3343,7 @@ ignore_texture_size = true
 script = ExtResource("126_esrwe")
 plant_name = "Mint"
 price = 40
+hover_message = "Mint"
 
 [node name="coin" type="TextureRect" parent="seed_shop/mint" unique_id=2135958177]
 layout_mode = 0
@@ -3196,6 +3374,7 @@ texture_normal = ExtResource("110_f5chs")
 ignore_texture_size = true
 script = ExtResource("126_esrwe")
 plant_name = "Lemon"
+hover_message = "Lemon"
 
 [node name="coin" type="TextureRect" parent="seed_shop/lemon" unique_id=1729589266]
 layout_mode = 0
@@ -3227,6 +3406,7 @@ ignore_texture_size = true
 script = ExtResource("126_esrwe")
 plant_name = "Cucumber"
 price = 40
+hover_message = "Cucumber"
 
 [node name="coin" type="TextureRect" parent="seed_shop/cucumber" unique_id=1169714159]
 layout_mode = 0
@@ -3258,6 +3438,7 @@ ignore_texture_size = true
 script = ExtResource("126_esrwe")
 plant_name = "Ginger"
 price = 50
+hover_message = "Ginger"
 
 [node name="coin" type="TextureRect" parent="seed_shop/ginger" unique_id=835428629]
 layout_mode = 0
@@ -3288,6 +3469,7 @@ texture_normal = ExtResource("112_joh2r")
 script = ExtResource("126_esrwe")
 plant_name = "Strawberry"
 price = 70
+hover_message = "Strawberry"
 
 [node name="coin" type="TextureRect" parent="seed_shop/strawberry" unique_id=1319355356]
 layout_mode = 1
@@ -3318,6 +3500,7 @@ texture_normal = ExtResource("113_yton5")
 script = ExtResource("126_esrwe")
 plant_name = "Hibiscus"
 price = 50
+hover_message = "Hibiscus"
 
 [node name="coin" type="TextureRect" parent="seed_shop/hibiscus" unique_id=1262156846]
 layout_mode = 0
@@ -3349,6 +3532,7 @@ ignore_texture_size = true
 script = ExtResource("126_esrwe")
 plant_name = "Lavender"
 price = 90
+hover_message = "Lavender"
 
 [node name="coin" type="TextureRect" parent="seed_shop/lavender" unique_id=1877025584]
 layout_mode = 0
@@ -3378,8 +3562,9 @@ offset_bottom = 254.0
 texture_normal = ExtResource("119_m4o51")
 ignore_texture_size = true
 script = ExtResource("126_esrwe")
-plant_name = "Passionfruit"
+plant_name = "Blueberry"
 price = 100
+hover_message = "Blueberry"
 
 [node name="coin" type="TextureRect" parent="seed_shop/blueberry" unique_id=1283061569]
 layout_mode = 0
@@ -3410,6 +3595,7 @@ texture_normal = ExtResource("114_4ahvx")
 script = ExtResource("126_esrwe")
 plant_name = "Watermelon"
 price = 50
+hover_message = "Watermelon"
 
 [node name="coin" type="TextureRect" parent="seed_shop/Watermelon" unique_id=1804936740]
 layout_mode = 0
@@ -3474,6 +3660,18 @@ volume_db = -8.0
 autoplay = true
 bus = &"Music"
 
+[node name="hover_text" type="Label" parent="." unique_id=156618392]
+z_index = 1
+offset_left = 982.0
+offset_top = -29.0
+offset_right = 1067.0
+offset_bottom = -6.0
+theme_override_colors/font_outline_color = Color(0.2784314, 0.15294118, 0.18431373, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("18_m4o51")
+theme_override_font_sizes/font_size = 18
+text = "Watermelon"
+
 [connection signal="pressed" from="CanvasLayer/next" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="CanvasLayer/prev" to="." method="_on_prev_pressed"]
 [connection signal="pressed" from="CanvasLayer/close" to="." method="_on_close_pressed"]
@@ -3483,3 +3681,6 @@ bus = &"Music"
 [connection signal="pressed" from="bedroom/buttons/hatbutton" to="." method="_on_hatbutton_pressed"]
 [connection signal="pressed" from="bedroom/buttons/glassesbutton" to="." method="_on_glassesbutton_pressed"]
 [connection signal="pressed" from="bedroom/buttons/dressbutton" to="." method="_on_dressbutton_pressed"]
+[connection signal="pressed" from="shop/glass/throw2" to="." method="_on_throw_2_pressed"]
+[connection signal="pressed" from="shop/skip" to="." method="_on_skip_pressed"]
+[connection signal="pressed" from="shop/Hint" to="." method="_on_hint_pressed"]

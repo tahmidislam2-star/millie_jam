@@ -27,11 +27,15 @@ const CUSTOMER_SCENE := preload("res://scenes/customer.tscn")
 @onready var sleep_pos: Marker2D = $"bedroom/sleep pos"
 @onready var regular_pos: Marker2D = $"bedroom/regular pos"
 @onready var blackout: Panel = $bedroom/blackout
+@onready var skip_button: Button = $shop/skip
 
 
 @export var male_bodies: Array[Texture2D] = []      
 @export var female_bodies: Array[Texture2D] = []    
 @onready var camera_2d: Camera2D = $Camera2D
+@onready var throw_sprite: Sprite2D = $shop/Throw
+@onready var throw_sprite_animation: AnimationPlayer = $shop/Throw/throw_animation
+@onready var throw_sound_water: AudioStreamPlayer = $shop/glass/throw_sound_water
 
 @export var male_default_face: Texture2D
 @export var male_happy_face: Texture2D
@@ -49,7 +53,7 @@ const CUSTOMER_SCENE := preload("res://scenes/customer.tscn")
 @export var seed_drag_icon: Texture2D
 @onready var dialogue_box: Panel = $"seed_shop/Dialogue Box"
 @onready var label: Label = $"seed_shop/Dialogue Box/Label"
-@onready var shop_closed: Label = $shop/shop_closed
+@onready var hint_label: Label = $shop/hint_label
 @onready var pause_menu: Panel = $CanvasLayer/pause_menu
 @onready var yes: Button = $CanvasLayer/pause_menu/Yes
 @onready var slide: AudioStreamPlayer = $CanvasLayer/slide
@@ -59,6 +63,9 @@ const CUSTOMER_SCENE := preload("res://scenes/customer.tscn")
 @onready var light_sound: AudioStreamPlayer = $bedroom/light
 @onready var cat_meow: AudioStreamPlayer = $bedroom/cat_meow
 @onready var click_sound: AudioStreamPlayer = $CanvasLayer/click
+@onready var hover_text: Label = $hover_text
+@onready var hint_button: TextureButton = $shop/Hint
+
 
 var dialogue_lines: Array[String] = [
 	"You remind me of myself when I was younger.",
@@ -82,13 +89,14 @@ var dialogue_lines: Array[String] = [
 	"It's dangerous to go alone! Take this.",
 ]
 
+
 var is_dialogue_showing := false
 const TYPEWRITER_SPEED := 0.03
 const DIALOGUE_HOLD_TIME := 1.5
 
 var shop_closed_text: String = ""
-
-
+var is_throwing := false
+var is_hint_showing := false
 var customers_served_today := 0
 var max_customers_today := 0
 var last_gender: bool = true   
@@ -101,6 +109,8 @@ var current_day := 1
 var current_scene_index := 0
 var is_sleeping := false
 var is_moving := false
+const HOVER_TEXT_OFFSET := Vector2(28, -16)
+var hover_text_active := false
 const SCENE_BASE_X := 320
 const SCENE_Y := 180
 const SCENE_SPACING := 640
@@ -116,7 +126,33 @@ const DAILY_FREE_SEED_COUNT := 4
 @onready var right_bottom: Marker2D = $farm/right_bottom
 
 func _ready() -> void:
-	#DrinkStand.reset_state()
+	DrinkStand.reset_state()
+	DrinkStand.inventory = { "Lemon": 3, 
+		"Sugarcane": 3, 
+		"Mint": 3, 
+		"Cucumber": 3, 
+		"Hibiscus": 2, 
+		"Ginger": 2, 
+		"Watermelon": 0, 
+		"Strawberry": 0, 
+		"Passionfruit": 0, 
+		"Lavender": 0 }
+	for ing_name in DrinkStand.inventory.keys():
+		DrinkStand.inventory_changed.emit(ing_name)
+	
+	FarmStand.seeds = {"Lemon": 2, 
+	"Sugarcane": 2, 
+	"Mint": 2, 
+	"Cucumber": 2, 
+	"Ginger": 2, 
+	"Hibiscus": 2, 
+	"Strawberry": 1, 
+	"Watermelon": 1, 
+	"Lavender": 0, 
+	"Passionfruit": 0 }
+	for seed_name in FarmStand.seeds.keys():
+		FarmStand.seeds_changed.emit(seed_name) 
+
 	Wardrobe.coins= 300
 	slot_sprites = {"dress": dress, "glass": glass, "hat": hat}
 	Wardrobe.item_equipped.connect(_on_item_equipped)
@@ -147,10 +183,13 @@ func _ready() -> void:
 	heart.visible = false
 	pet_area.petted.connect(_on_petted)
 	pet_area.pet_stopped.connect(_on_pet_stopped)
-	shop_closed_text = shop_closed.text
-	shop_closed.visible = false
-	shop_closed.text = ""
-
+	shop_closed_text = hint_label.text
+	hint_label.visible = false
+	hint_label.text = ""
+	hover_text.visible = false
+	hover_text.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	HoverBus.hover_started.connect(_on_hover_started)
+	HoverBus.hover_ended.connect(_on_hover_ended)
 	
 func _on_coins_changed(new_amount: int) -> void:
 	coin_label.text = str(new_amount)
@@ -227,11 +266,12 @@ func spawn_customer() -> void:
 	if customers_served_today >= max_customers_today:
 		current_customer = null
 		_show_shop_closed()
+		skip_button.disabled = true
 		return
 
 	var is_male: bool
 	var idx: int
-
+	
 	while true:
 		is_male = randf() < 0.5
 		idx = randi() % 5
@@ -258,7 +298,8 @@ func spawn_customer() -> void:
 	c.global_position = customer_spawn.global_position
 	c.customer_left.connect(_on_customer_left)
 	current_customer = c
-	c.setup(DrinkStand.generate_customer_order())
+	c.setup(DrinkStand.generate_customer_order(current_day))
+	skip_button.disabled = false
 
 func _on_customer_left(_satisfied: bool) -> void:
 	customers_served_today += 1
@@ -396,17 +437,8 @@ func _grant_daily_seeds() -> void:
 		FarmStand.add_seed(pick, 1)
 
 func _show_shop_closed() -> void:
-	shop_closed.visible = true
-	shop_closed.text = ""
-
-	for i in shop_closed_text.length():
-		shop_closed.text += shop_closed_text[i]
-		await get_tree().create_timer(TYPEWRITER_SPEED).timeout
-
-	await get_tree().create_timer(SHOP_CLOSED_HOLD_TIME).timeout
-
-	shop_closed.visible = false
-	shop_closed.text = ""
+	skip_button.disabled = true
+	await _show_hint_message(shop_closed_text)
 	
 func _on_close_pressed() -> void:
 	if is_moving: 
@@ -440,3 +472,91 @@ func _on_no_pressed() -> void:
 	get_tree().paused = false
 	pause_menu.visible = false
 	click_sound.play()
+
+
+func _on_skip_pressed() -> void:
+	if current_customer == null:
+		return
+	current_customer.react(false)
+	skip_button.disabled = true
+
+func _on_hover_started(message: String) -> void:
+	if get_tree().paused:
+		return
+	hover_text.text = message
+	hover_text.visible = true
+	hover_text_active = true
+
+func _on_hover_ended() -> void:
+	hover_text.visible = false
+	hover_text_active = false
+
+func _process(_delta: float) -> void:
+	if hover_text_active:
+		hover_text.global_position = get_global_mouse_position() - HOVER_TEXT_OFFSET
+
+
+func _show_hint_message(text: String) -> void:
+	is_hint_showing = true
+	hint_button.disabled = true
+	hint_label.visible = true
+	hint_label.text = ""
+
+	for i in text.length():
+		hint_label.text += text[i]
+		await get_tree().create_timer(TYPEWRITER_SPEED).timeout
+
+	await get_tree().create_timer(SHOP_CLOSED_HOLD_TIME).timeout
+
+	hint_label.visible = false
+	hint_label.text = ""
+	hint_button.disabled = false
+	is_hint_showing = false
+	
+func _on_hint_pressed() -> void:
+	if is_hint_showing:
+		return
+
+	if current_customer == null:
+		_show_hint_message("Sleep to end the day.")
+		return
+
+	var pair := DrinkStand.get_hint_pair(true)
+	if not pair.is_empty():
+		if pair[0] == pair[1]:
+			_show_hint_message("Try two %s." % pair[0])
+		else:
+			_show_hint_message("Try %s and %s." % [pair[0], pair[1]])
+		return
+
+	var any_combo := DrinkStand.get_hint_pair(false)
+	if any_combo.is_empty():
+		_show_hint_message("No matching combo found.")
+	else:
+		_show_hint_message("You don't have the ingredients for this.")
+
+
+func _on_throw_2_pressed() -> void:
+	if is_throwing or current_customer == null:
+		return
+	is_throwing = true
+
+	throw_sound.play()
+	throw_sprite.modulate.a = 1.0
+	throw_sprite.visible = true
+	throw_sprite_animation.play("throw")
+	throw_sound_water.play()
+	await throw_sprite_animation.animation_finished
+
+	var fade_out := create_tween()
+	fade_out.tween_property(throw_sprite, "modulate:a", 0.0, 0.5)
+	current_customer.react(false)
+	await fade_out.finished
+	throw_sprite.visible = false
+
+	current_drink = {}
+	drink_glass.visible = false
+	
+	skip_button.disabled = true
+
+	is_throwing = false

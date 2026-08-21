@@ -7,6 +7,7 @@ extends TextureButton
 @export var hover_color := Color(1.2, 1.2, 1.2)
 @onready var amount_label: Label = $amount
 @onready var click: AudioStreamPlayer = $"../../click"
+@export var hover_message : String
 
 var dragging := false
 var drag_icon: TextureRect = null
@@ -54,6 +55,9 @@ func _finish_drag(mouse_pos: Vector2) -> void:
 	
 func _on_mouse_entered() -> void:
 	create_tween().tween_property(self, "modulate", hover_color, 0.08)
+	if hover_message != "":
+		HoverBus.hover_started.emit(hover_message)
 
 func _on_mouse_exited() -> void:
 	create_tween().tween_property(self, "modulate", normal_color, 0.08)
+	HoverBus.hover_ended.emit()
